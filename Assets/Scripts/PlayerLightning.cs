@@ -77,43 +77,31 @@ public class PlayerLightning : MonoBehaviour
         StartCoroutine(AttackCooldown());
         for(int rodNum = 0; rodNum < lightningRodsSummoned.Count; rodNum++)
         {
-            GameObject newLightning;
             if(rodNum == 0)
             {
-                Vector3 spawnPos = (transform.position + lightningRodsSummoned[rodNum].transform.position)/2;
-                spawnPos.y = 1.5f;
-                newLightning = Instantiate(lightningAttackPrefab, spawnPos, Quaternion.identity);
-                float z = Vector3.Distance(transform.position, lightningRodsSummoned[rodNum].transform.position);
-                newLightning.transform.localScale = new Vector3(1, 1, z/2);
-                lightningSummoned.Add(newLightning);
-                newLightning.transform.LookAt(lightningRodsSummoned[rodNum].transform.position);
-                // newLightning.transform.rotation = new Quaternion(0, newLightning.transform.rotation.y, 0, 0);
+                SpawnLightning(transform.position, lightningRodsSummoned[rodNum].transform.position);
             }
             else
             {
-                Vector3 spawnPos = (lightningRodsSummoned[rodNum - 1].transform.position + lightningRodsSummoned[rodNum].transform.position)/2;
-                spawnPos.y = 1.5f;
-                newLightning = Instantiate(lightningAttackPrefab, spawnPos, Quaternion.identity);
-                float z = Vector3.Distance(lightningRodsSummoned[rodNum - 1].transform.position, lightningRodsSummoned[rodNum].transform.position);
-                newLightning.transform.localScale = new Vector3(1, 1, z/2);
-                lightningSummoned.Add(newLightning);
-                newLightning.transform.LookAt(lightningRodsSummoned[rodNum - 1].transform.position);
-                // newLightning.transform.rotation = new Quaternion(0, newLightning.transform.rotation.y, 0, 0);
+                SpawnLightning(lightningRodsSummoned[rodNum - 1].transform.position, lightningRodsSummoned[rodNum].transform.position);
             }
             if((rodNum != 0 && rodNum == lightningRodsSummoned.Count - 1))
             {
-                Vector3 spawnPos = (transform.position + lightningRodsSummoned[rodNum].transform.position)/2;
-                spawnPos.y = 1.5f;
-                newLightning = Instantiate(lightningAttackPrefab, spawnPos, Quaternion.identity);
-                float z = Vector3.Distance(transform.position, lightningRodsSummoned[rodNum].transform.position);
-                newLightning.transform.localScale = new Vector3(1, 1, z/2);
-                lightningSummoned.Add(newLightning);
-                newLightning.transform.LookAt(lightningRodsSummoned[rodNum].transform.position);
-                // newLightning.transform.rotation = new Quaternion(0, newLightning.transform.rotation.y, 0, 0);
+                SpawnLightning(transform.position, lightningRodsSummoned[rodNum].transform.position);
             }
-            
         }
         StartCoroutine(ResetLightning());
+    }
+
+    private void SpawnLightning(Vector3 rod1, Vector3 rod2)
+    {
+        Vector3 spawnPos = (rod1 + rod2)/2;
+        spawnPos.y = 1.5f;
+        GameObject newLightning = Instantiate(lightningAttackPrefab, spawnPos, Quaternion.identity);
+        float z = Vector3.Distance(rod1, rod2);
+        newLightning.transform.localScale = new Vector3(1, 1, z * .5f);
+        lightningSummoned.Add(newLightning);
+        newLightning.transform.LookAt(rod2);
     }
 
     private IEnumerator ResetLightning()

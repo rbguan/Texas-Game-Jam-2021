@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3102597902513727172}
   m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 0, y: 6.24, z: -3.57}
+  m_LocalPosition: {x: 0, y: 12.48, z: -7.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3102597903323715224}
@@ -259,3 +259,4 @@ MonoBehaviour:
   lightningRodPrefab: {fileID: 8942530082422504377, guid: aae6e0c13972dc0498958d142dd5d48c, type: 3}
   lightningAttackPrefab: {fileID: 4868794243494885323, guid: ecab1b57a1967ca42ae9435a138a9fc0, type: 3}
   myCamera: {fileID: 3102597902513727170}
+  lightningLifeTime: 1
