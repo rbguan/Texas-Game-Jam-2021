@@ -18,9 +18,16 @@ public class PlayerStats : Singleton<PlayerStats>
         set {attackCooldown = value;}
     }
 
+    [SerializeField] private int exp = 0;
+    public int Exp 
+    {
+        get {return exp;} 
+        set {exp = value;}
+    }
     protected override void Awake()
     {
         base.Awake();
+        DontDestroyOnLoad(this.gameObject);
     }
     // Start is called before the first frame update
     void Start()

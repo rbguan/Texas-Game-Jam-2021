@@ -354,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxRods: 2
   attackCooldown: 2
+  exp: 0
 --- !u!114 &2975317775784638448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightningRodPrefab: {fileID: 8942530082422504377, guid: aae6e0c13972dc0498958d142dd5d48c, type: 3}
-  lightningAttackPrefab: {fileID: 4868794243494885323, guid: ecab1b57a1967ca42ae9435a138a9fc0, type: 3}
+  lightningAttackPrefab: {fileID: 1953876769234357562, guid: 401fd13c3a80a884b9bf6513e1eac953, type: 3}
   lightningSfx: {fileID: 8783911915304255482}
   myCamera: {fileID: 3102597902513727170}
   lightningLifeTime: 1
