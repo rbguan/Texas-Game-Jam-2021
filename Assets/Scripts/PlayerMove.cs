@@ -23,9 +23,21 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate() 
     {
-        Vector3 movement = ((LeftRight * transform.right) + (UpDown * transform.forward))* mySpeed;
-        myRB.MovePosition(transform.position + (movement * Time.deltaTime));
+        Vector3 movement = ((LeftRight * transform.right) + (UpDown * transform.forward))* mySpeed * Time.deltaTime;
+        // myRB.MovePosition(transform.position + (movement * Time.deltaTime));
         myRB.angularVelocity = Vector3.zero;
+        Ray ray = new Ray(transform.position, movement);
+        RaycastHit hit;
+        if (!Physics.Raycast(ray,out hit, movement.magnitude))
+        {
+            myRB.MovePosition(transform.position + movement);
+        }
+        else
+        {
+            Debug.Log("hit");
+            myRB.MovePosition(hit.point);
+        }
+ 
     }
     
 }
