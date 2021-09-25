@@ -32,9 +32,14 @@ public class LightningStrike : MonoBehaviour
         thisBolt.transform.Find("Flair").transform.position = startLoc;
         thisBolt.transform.Find("Burst").transform.position = endLoc;
         thisBolt.transform.Find("Struck").transform.position = endLoc;
-        thisBolt.transform.Find("Struck").transform.eulerAngles = new Vector3(0, 90, 0);
+        thisBolt.transform.Find("Struck").transform.eulerAngles = new Vector3(90, 0, 0);
         thisBolt.transform.Find("Scorching").transform.position = endLoc;
         thisBolt.transform.Find("Scorched").transform.position = endLoc;
+        float rotation = Random.Range(0f, 360f);
+        ParticleSystem.MainModule scorching = thisBolt.transform.Find("Scorching").GetComponent<ParticleSystem>().main;
+        ParticleSystem.MainModule scorched = thisBolt.transform.Find("Scorched").GetComponent<ParticleSystem>().main;
+        scorching.startRotation = rotation;
+        scorched.startRotation = rotation;
         thisBolt.transform.Find("Bolt").transform.position = startLoc;
         Vector3 targetDirection = endLoc - startLoc;
         Vector3 newDirection = Vector3.RotateTowards(startLoc, targetDirection, Time.deltaTime, 0.0f);

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1556956629977514999}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LightningStrike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4977,7 +4977,7 @@ GameObject:
   - component: {fileID: 6312728448106449510}
   - component: {fileID: 3627820530610687429}
   - component: {fileID: 6883447083546335246}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lightning Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
