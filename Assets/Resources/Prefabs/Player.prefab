@@ -333,7 +333,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxRods: 2
   attackCooldown: 2
+  lightningDamage: 1
   exp: 0
+  width: 1
+  speed: 15
+  startRods: 0
+  startAttackCooldown: 0
+  startLightningDamage: 0
+  startWidth: 0
+  startHealth: 0
+  startSpeed: 0
 --- !u!114 &2975317775784638448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +374,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 1
 --- !u!1001 &293442817876828189
 PrefabInstance:
