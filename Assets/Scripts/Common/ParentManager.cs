@@ -11,16 +11,6 @@ public class ParentManager : MonoBehaviour
 
     public static Transform Entities => Find(ref entities, ENTITIES);
 
-    private void OnEnable()
-    {
-
-    }
-
-    private void OnDisable()
-    {
-
-    }
-
     private static Transform Find(ref Transform transform, string name)
     {
         if (!transform)
