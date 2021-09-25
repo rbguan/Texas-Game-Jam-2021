@@ -6,8 +6,11 @@ using Random = UnityEngine.Random;
 
 public class LevelGenerator : Singleton<LevelGenerator>
 {   
+    [SerializeField] private GameObject aStarPrefab;
+
     [Header("Level Parameters")]
     [SerializeField] private Level currentLevel;
+    [SerializeField] private int spawnerCount;
 
     [Header("Section Prefabs")]
     [SerializeField] private List<GameObject> sectionPrefabs = new List<GameObject>();
@@ -41,6 +44,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
         foreach (Section section in CurrentLevel.sections)
             SectionPlacementHandler.PlaceBarriersAroundSection(section);
         PlacePlayer();
+        GenerateAStarGraph();
         Debug.Log("Level generated.");
     }
 
@@ -50,5 +54,11 @@ public class LevelGenerator : Singleton<LevelGenerator>
         Vector3 spawnPosition = new Vector3(spawnSection.position.x, 0, spawnSection.position.y) * 20 + new Vector3(-10, 0, 10);
         GameObject playerPrefab = Assets.Get<GameObject>("Player");
         PlayerInfo.playerObject = Instantiate(playerPrefab, spawnPosition, Quaternion.identity, ParentManager.Entities);
+    }
+
+    private void GenerateAStarGraph()
+    {
+        Vector3 position = CurrentLevel.sections[CurrentLevel.sections.Count / 2].transform.position;
+        Instantiate(aStarPrefab, position, Quaternion.identity);
     }
 }
