@@ -6,6 +6,7 @@ public class PlayerLightning : MonoBehaviour
 {
     [SerializeField] private GameObject lightningRodPrefab;
     [SerializeField] private GameObject lightningAttackPrefab;
+    [SerializeField] private LightningStrike lightningSfx;
     [SerializeField] private Camera myCamera;
     [SerializeField] private float lightningLifeTime = 1f;
     private List<GameObject> lightningRodsSummoned;
@@ -87,7 +88,7 @@ public class PlayerLightning : MonoBehaviour
             }
             if((rodNum != 0 && rodNum == lightningRodsSummoned.Count - 1))
             {
-                SpawnLightning(transform.position, lightningRodsSummoned[rodNum].transform.position);
+                SpawnLightning(lightningRodsSummoned[rodNum].transform.position, transform.position);
             }
         }
         StartCoroutine(ResetLightning());
@@ -99,9 +100,13 @@ public class PlayerLightning : MonoBehaviour
         spawnPos.y = 1.5f;
         GameObject newLightning = Instantiate(lightningAttackPrefab, spawnPos, Quaternion.identity);
         float z = Vector3.Distance(rod1, rod2);
-        newLightning.transform.localScale = new Vector3(1, 1, z * .5f);
-        lightningSummoned.Add(newLightning);
+        Transform sfxModel = newLightning.GetComponentsInChildren<Transform>()[1];
         newLightning.transform.LookAt(rod2);
+        sfxModel.transform.localScale = new Vector3(1, z * .5f, 1);
+        sfxModel.transform.Rotate(Vector3.right, 90);
+        lightningSummoned.Add(newLightning);
+        
+        lightningSfx.Strike(rod1, rod2);
     }
 
     private IEnumerator ResetLightning()

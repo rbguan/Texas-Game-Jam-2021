@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8956147279743354940}
   - component: {fileID: 3819756959071364223}
   - component: {fileID: 5235005074341492384}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lighting Rod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
