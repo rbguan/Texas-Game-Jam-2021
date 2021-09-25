@@ -14,4 +14,5 @@ public class Level
     [Header("Runtime")]
     public TGrid<Section> grid = new TGrid<Section>(MAX_SIZE, MAX_SIZE);
     public List<Section> sections = new List<Section>();
+    public HashSet<Vector2Int> barriers = new HashSet<Vector2Int>();
 }

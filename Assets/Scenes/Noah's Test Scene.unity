@@ -476,5 +476,5 @@ MonoBehaviour:
   currentLevel:
     maxSections: 24
     sections: []
-  startingSectionPrefab: {fileID: 4276677594749166313, guid: 8ee5ec6b2bced604381ae1e2bf906793, type: 3}
-  sectionPrefabs: []
+  sectionPrefabs:
+  - {fileID: 4276677594749166313, guid: 8ee5ec6b2bced604381ae1e2bf906793, type: 3}
