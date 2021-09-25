@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Lightning
-  m_Shader: {fileID: -6465566751694194690, guid: f3bbb7880406e3a4398cb76313f62286, type: 3}
+  m_Name: Scorched
+  m_Shader: {fileID: -6465566751694194690, guid: 479a4cbdf7e1c7c4ebbf5959a26aacca, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,8 +19,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_b00a6bb8d0144ea29355ea29f33b1a60:
-        m_Texture: {fileID: 2800000, guid: 43f1e82f5faebe44a9143b024ca4998b, type: 3}
+    - Texture2D_a37d5f35092f49c18cbc89e26193a6a7:
+        m_Texture: {fileID: 2800000, guid: 4d2a9605115b2e64ebc2c2aa1b2c24aa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -107,14 +107,13 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_63a5e85dd9e64a0892c61c765c61abf3: {r: 20.716602, g: 20.716602, b: 20.716602, a: 1}
-    - Vector2_cdd048dca05b480fbccc368a0ded9f79: {r: 0, g: 2, b: 0, a: 0}
+    - Color_6b8c7ef751d64febb2b7715dc0e12379: {r: 92.65833, g: 92.65833, b: 92.65833, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &7642850080142959393
+--- !u!114 &5092367994804966708
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
