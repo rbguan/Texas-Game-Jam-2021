@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : Singleton<T>
 {
-    private T current;
+    private static T current;
 
-    public T Current
+    public static T Current
     {
         get
         {
