@@ -9,4 +9,9 @@ public class TGJGame : Singleton<TGJGame>
         base.Awake();
         PrefabLoader.LoadAllAtPath();
     }
+
+    private void Start()
+    {
+        LevelGenerator.Current.GenerateLevel();
+    }
 }
