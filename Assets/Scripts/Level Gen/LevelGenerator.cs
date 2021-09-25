@@ -10,4 +10,9 @@ public class LevelGenerator : Singleton<LevelGenerator>
     {
         base.Awake();
     }
+
+    public void GenerateLevel()
+    {
+
+    }
 }
