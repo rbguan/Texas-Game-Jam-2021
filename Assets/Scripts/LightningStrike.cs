@@ -19,15 +19,16 @@ public class LightningStrike : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Strike(start, end);
-        }
+        // if (Input.GetKeyDown(KeyCode.L))
+        // {
+        //     Strike(start, end);
+        // }
     }
 
-    void Strike(Vector3 startLoc, Vector3 endLoc)
+    public void Strike(Vector3 startLoc, Vector3 endLoc)
     {
-        var thisBolt = Instantiate(lightningStrike, startLoc, Quaternion.identity);
+        endLoc.y = .1f;
+        GameObject thisBolt = Instantiate(lightningStrike, startLoc, Quaternion.identity);
         thisBolt.transform.Find("Flair").transform.position = startLoc;
         thisBolt.transform.Find("Burst").transform.position = endLoc;
         thisBolt.transform.Find("Struck").transform.position = endLoc;
@@ -39,7 +40,7 @@ public class LightningStrike : MonoBehaviour
         Vector3 newDirection = Vector3.RotateTowards(startLoc, targetDirection, Time.deltaTime, 0.0f);
         thisBolt.transform.Find("Bolt").transform.rotation = Quaternion.LookRotation(newDirection);
         //thisBolt.transform.Find("Bolt").transform.Rotate(new Vector3(90, 40, 0));
-        thisBolt.transform.Find("Bolt").transform.localScale += new Vector3(0, endLoc.y - startLoc.y, 0);
+        thisBolt.transform.Find("Bolt").transform.localScale += new Vector3(0, (endLoc.y - startLoc.y)/2, 0);
 
         ParticleSystem[] boltChildren = thisBolt.GetComponentsInChildren<ParticleSystem>();
             
@@ -47,6 +48,13 @@ public class LightningStrike : MonoBehaviour
         {
             p.Play();
         }
+        StartCoroutine(CleanUpLightningSFX(thisBolt));
 
+    }
+
+    private IEnumerator CleanUpLightningSFX(GameObject sfx)
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(sfx);
     }
 }

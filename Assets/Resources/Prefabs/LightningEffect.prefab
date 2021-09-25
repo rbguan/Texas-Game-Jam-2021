@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 5832465239012590126}
   - component: {fileID: 5832465239012590124}
   - component: {fileID: 5832465239012590125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5832465239012590126
 Transform:
   m_ObjectHideFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5832465239012590127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 2.0752}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5832465240115461644}
   m_RootOrder: 2
@@ -4901,7 +4901,7 @@ GameObject:
   - component: {fileID: 5832465239035143038}
   - component: {fileID: 5832465239035143036}
   - component: {fileID: 5832465239035143037}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Burst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4916,7 +4916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5832465239035143039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -20, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 5832465240115461644}
@@ -9763,7 +9763,7 @@ GameObject:
   - component: {fileID: 5832465239091255371}
   - component: {fileID: 5832465239091255369}
   - component: {fileID: 5832465239091255370}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Scorching
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9778,7 +9778,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5832465239091255364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -20, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 5832465240115461644}
@@ -14625,7 +14625,7 @@ GameObject:
   - component: {fileID: 5832465239535603722}
   - component: {fileID: 5832465239535603720}
   - component: {fileID: 5832465239535603721}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Scorched
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14640,7 +14640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5832465239535603723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -20, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 5832465240115461644}
@@ -19487,7 +19487,7 @@ GameObject:
   - component: {fileID: 5832465239995498421}
   - component: {fileID: 5832465239995498427}
   - component: {fileID: 5832465239995498420}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24421,7 +24421,7 @@ GameObject:
   - component: {fileID: 5832465240051618678}
   - component: {fileID: 5832465240051618676}
   - component: {fileID: 5832465240051618677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Struck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24436,7 +24436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5832465240051618679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -20, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5832465240115461644}
@@ -29281,7 +29281,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5832465240115461644}
-  m_Layer: 0
+  - component: {fileID: 787193027708183782}
+  m_Layer: 6
   m_Name: LightningEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29308,3 +29309,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &787193027708183782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5832465240115461645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622744da67e63d546b46e75491bc3a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightningStrike: {fileID: 5832465240115461645}
+  start: {x: 0, y: 0, z: 0}
+  end: {x: 0, y: 0, z: 0}
