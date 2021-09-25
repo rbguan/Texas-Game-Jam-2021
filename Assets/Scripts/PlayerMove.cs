@@ -8,18 +8,24 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float mySpeed = 1f;
     private float LeftRight = 0f;
     private float UpDown = 0f;
+    private Rigidbody myRB;
     
     void Start()
     {
-     
+        myRB = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
         LeftRight = Input.GetAxis("Horizontal");
         UpDown = Input.GetAxis("Vertical");
+    }
+
+    void FixedUpdate() 
+    {
         Vector3 movement = ((LeftRight * transform.right) + (UpDown * transform.forward))* mySpeed;
-        transform.Translate(movement * Time.deltaTime);
+        myRB.MovePosition(transform.position + (movement * Time.deltaTime));
+        myRB.angularVelocity = Vector3.zero;
     }
     
 }
