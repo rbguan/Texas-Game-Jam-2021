@@ -21,4 +21,5 @@ public class PlayerMove : MonoBehaviour
         Vector3 movement = ((LeftRight * transform.right) + (UpDown * transform.forward))* mySpeed;
         transform.Translate(movement * Time.deltaTime);
     }
+    
 }
