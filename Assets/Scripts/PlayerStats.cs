@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class PlayerStats : Singleton<PlayerStats>
 {
-    public int MaxRods {get; set;}
+    [SerializeField] private int maxRods = 2;
+    public int MaxRods 
+    {
+        get {return maxRods;} 
+        set {maxRods = value;}
+    }
+
+    [SerializeField] private float attackCooldown = 2f;
+    public float AttackCooldown 
+    {
+        get {return attackCooldown;} 
+        set {attackCooldown = value;}
+    }
 
     protected override void Awake()
     {
         base.Awake();
-        MaxRods = 3;
     }
     // Start is called before the first frame update
     void Start()
