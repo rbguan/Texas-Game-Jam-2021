@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class LeafSpawner : MonoBehaviour
 {
-    public GameObject leafPrefab;
+    public GameObject[] billowingObjects;
     private float timer = 0;
+    private int currAmount = 0;
+    public int maxAmount = 20;
     public int freqMin = 0;
     public int freqMax = 10;
 
@@ -18,11 +20,27 @@ public class LeafSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer <= 0)
+        if (timer <= 0 && currAmount < maxAmount)
         {
             // Spawn new leaf
-            //Instantiate(leafPrefab, , Quaternion.identity);
+            var spawnLoc = GetRandomPointInsideCollider(gameObject.GetComponent<BoxCollider>());
+            var b = Instantiate(billowingObjects[Random.Range(0, billowingObjects.Length + 1)], spawnLoc, Quaternion.identity);
+            b.transform.rotation = new Quaternion(Random.Range(1, 360), Random.Range(1, 360), 0, Random.Range(1, 360));
+            b.transform.parent = gameObject.transform;
             timer = Random.Range(freqMin, freqMax);
+            currAmount += 1;
         }
+    }
+
+    private Vector3 GetRandomPointInsideCollider(BoxCollider boxCollider)
+    {
+        Vector3 extents = boxCollider.size / 2f;
+        Vector3 point = new Vector3(
+            Random.Range(-extents.x, extents.x),
+            Random.Range(-extents.y, extents.y),
+            Random.Range(-extents.z, extents.z)
+        );
+
+        return boxCollider.transform.TransformPoint(point);
     }
 }
