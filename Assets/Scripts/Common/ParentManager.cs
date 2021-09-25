@@ -6,10 +6,14 @@ using UnityEngine;
 public class ParentManager : MonoBehaviour
 {
     private const string ENTITIES = "--- Entities ---";
+    private const string LEVEL = "--- Level ---";
 
     private static Transform entities;
+    private static Transform level;
 
     public static Transform Entities => Find(ref entities, ENTITIES);
+
+    public static Transform Level => Find(ref level, LEVEL);
 
     private static Transform Find(ref Transform transform, string name)
     {
