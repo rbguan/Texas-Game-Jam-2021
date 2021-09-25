@@ -222,6 +222,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 768110728}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeAttackSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Upgrades, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
 --- !u!224 &71150100 stripped
@@ -327,6 +343,22 @@ PrefabInstance:
     - target: {fileID: 2411509602363744038, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 768110728}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeWidth
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Upgrades, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
@@ -514,6 +546,85 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2411509602363744038, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
   m_PrefabInstance: {fileID: 555619320}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &570155678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 570155679}
+  - component: {fileID: 570155681}
+  - component: {fileID: 570155680}
+  m_Layer: 5
+  m_Name: Exp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &570155679
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570155678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1493406001}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.40049994, y: 0.799}
+  m_AnchorMax: {x: 0.615, y: 0.8901112}
+  m_AnchoredPosition: {x: 568, y: 35}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &570155680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570155678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 72
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: EXP:0
+--- !u!222 &570155681
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570155678}
+  m_CullTransparentMesh: 1
 --- !u!114 &625312842 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
@@ -722,23 +833,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageButton: {fileID: 943705580}
-  DamageButtonIncrement: 0
+  DamageButtonInitialCost: 1
+  DamageButtonIncrement: 1
   DamageMaxLevel: 5
+  DamageUpIncrement: 2
   WidthButton: {fileID: 498549962}
-  WidthButtonIncrement: 0
-  WidthMaxLevel: 0
+  WidthButtonInitialCost: 1
+  WidthButtonIncrement: 1
+  WidthMaxLevel: 5
+  WidthUpIncrement: 2
   AttackSpeedButton: {fileID: 625312842}
-  AttackSpeedButtonIncrement: 0
-  AttackSpeedMaxLevel: 0
+  AttackSpeedInitialCost: 2
+  AttackSpeedButtonIncrement: 2
+  AttackSpeedMaxLevel: 3
+  AttackSpeedUpIncrement: 0.5
   SpeedButton: {fileID: 1797589449}
-  SpeedButtonIncrement: 0
-  SpeedMaxLevel: 0
+  SpeedInitialCost: 1
+  SpeedButtonIncrement: 1
+  SpeedMaxLevel: 5
+  SpeedUpIncrement: 1
   RodsButton: {fileID: 2050846736}
-  RodsButtonIncrement: 0
-  RodsMaxLevel: 0
+  RodsInitialCost: 5
+  RodsButtonIncrement: 5
+  RodsMaxLevel: 3
+  RodsUpIncrement: 1
   HealthButton: {fileID: 996096595}
-  HealthButtonIncrement: 0
-  HealthMaxLevel: 0
+  HealthInitialCost: 1
+  HealthButtonIncrement: 2
+  HealthMaxLevel: 3
+  HealthUpIncrement: 1
 --- !u!1001 &772999744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -837,6 +960,30 @@ PrefabInstance:
     - target: {fileID: 2411509602363744038, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 768110728}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnClickSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Upgrades, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
@@ -944,6 +1091,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 768110728}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeDamage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnClickSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Upgrades, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
 --- !u!224 &866215371 stripped
@@ -1049,6 +1220,22 @@ PrefabInstance:
     - target: {fileID: 2411509602363744038, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 768110728}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeRods
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Upgrades, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
@@ -1271,6 +1458,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 768110728}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411509602363744039, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Upgrades, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 441bfb419c148fa41856eb750e1b636c, type: 3}
 --- !u!224 &1179644261 stripped
@@ -1376,6 +1579,7 @@ RectTransform:
   - {fileID: 904086393}
   - {fileID: 1179644261}
   - {fileID: 772999745}
+  - {fileID: 570155679}
   m_Father: {fileID: 768110727}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1434,7 +1638,7 @@ GameObject:
   - component: {fileID: 1494466874}
   - component: {fileID: 1494466873}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

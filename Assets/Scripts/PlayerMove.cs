@@ -34,7 +34,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            Debug.Log("hit");
+            // Debug.Log("hit");
             myRB.MovePosition(hit.point);
         }
  
