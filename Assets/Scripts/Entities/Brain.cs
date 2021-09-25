@@ -15,6 +15,11 @@ public class Brain : EntityPart
         attackingState = new Attacking(this);
     }
 
+    private void Start()
+    {
+        GoTo(chaseState);
+    }
+
     private void Update()
     {
         if (currentState != null)

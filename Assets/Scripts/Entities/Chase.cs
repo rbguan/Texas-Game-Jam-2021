@@ -9,8 +9,11 @@ public class Chase : State
 
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
+        Vector3 directionToPlayer = PlayerInfo.playerObject.transform.position - brain.parent.transform.position;
+        Vector2 directionToPlayerClamped = new Vector2(Mathf.Clamp(directionToPlayer.x, -1, 1), Mathf.Clamp(directionToPlayer.z, -1, 1)); 
+        brain.parent.Movement.Move(directionToPlayerClamped);
     }
 }

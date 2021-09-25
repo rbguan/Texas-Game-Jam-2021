@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 4744510374148731938}
   - component: {fileID: 4816854331577473428}
   - component: {fileID: 5191836130762800677}
+  - component: {fileID: 1796542314705563856}
   m_Layer: 10
   m_Name: Parts
   m_TagString: Untagged
@@ -189,6 +190,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424fdc21a2948e549845a040662220c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 4326191231991511660}
+  speed: 10
+  friction: 0.8
+  movementVector: {x: 0, y: 0}
+--- !u!114 &1796542314705563856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822242943226558459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a973a63c8acd2244d979e521a390a03a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 4326191231991511660}
+  player: {fileID: 0}
+  attacks:
+  - {fileID: 11400000, guid: f39a34d1f82da7046ad15240fe90e84b, type: 2}
+  currentAttack: {fileID: 0}
 --- !u!1 &8335511104711735207
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,9 +257,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d53b0e0797d72f44961255e1395f904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brain: {fileID: 0}
-  hitpoints: {fileID: 0}
-  body: {fileID: 0}
+  brain: {fileID: 4744510374148731938}
+  hitpoints: {fileID: 4816854331577473428}
+  body: {fileID: 973926465702473804}
 --- !u!54 &973926465702473804
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -5,4 +5,5 @@ using UnityEngine;
 public static class PlayerInfo
 {
     public static GameObject playerObject;
+    public static Entity playerEntity;
 }

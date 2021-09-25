@@ -8,6 +8,7 @@ public class Entity : MonoBehaviour
     [Header("Parts")]
     [SerializeField] private Brain brain;
     [SerializeField] private Hitpoints hitpoints;
+    [SerializeField] private Movement movement;
     [SerializeField] private Rigidbody body;
 
     public Brain Brain
@@ -27,6 +28,16 @@ public class Entity : MonoBehaviour
             if (!hitpoints)
                 hitpoints = GetComponentInChildren<Hitpoints>();
             return hitpoints;
+        }
+    }
+
+    public Movement Movement
+    {
+        get
+        {
+            if (!movement)
+                movement = GetComponentInChildren<Movement>();
+            return movement;
         }
     }
 
