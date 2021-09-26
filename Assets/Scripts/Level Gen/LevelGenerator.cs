@@ -58,6 +58,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
                 i--;
         }
         PlacePlayer();
+        PlacePortal();
         GenerateAStarGraph();
         Debug.Log("Level generated.");
     }
@@ -99,6 +100,14 @@ public class LevelGenerator : Singleton<LevelGenerator>
         PlayerInfo.playerObject.transform.position = spawnPosition;
         FollowerCamera.SnapToPlayer();
         FollowerCamera.Current.target = PlayerInfo.playerObject.transform;
+    }
+
+    private void PlacePortal()
+    {
+        GameObject portalPrefab = Assets.Get<GameObject>("Portal");
+        LevelInfo.portalObject = Instantiate(
+            portalPrefab, PlayerInfo.playerObject.transform.position, Quaternion.identity, ParentManager.Level);
+        LevelInfo.portalObject.SetActive(false); 
     }
 
     private void GenerateAStarGraph()

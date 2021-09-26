@@ -8,6 +8,7 @@ public class Portal : MonoBehaviour
     {
         if (other.GetComponentInParent<PlayerStats>())
         {
+            PlayerLevel.Current.level++;
             LevelLoadTransitions levelLoadTransitions = FindObjectOfType<LevelLoadTransitions>();
             levelLoadTransitions.LoadPlayScene();
         }

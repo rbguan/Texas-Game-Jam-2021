@@ -8,4 +8,10 @@ public class Attacking : State
     {
 
     }
+
+    public override void Start()
+    {
+        base.Start();
+        brain.parent.Animator.SetTrigger("goAttack");
+    }
 }

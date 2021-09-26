@@ -16,6 +16,14 @@ public class Chase : State
         brain.AIDestinationSetter.target = PlayerInfo.playerObject.transform;
     }
 
+    public override void Update()
+    {
+        base.Update();
+        Combat combat = brain.parent.Combat;
+        if (combat && combat.IsInAttackRangeOfPlayer())
+            combat.AttackPlayerWithBestAttack();
+    }
+
     public override void End()
     {
         base.End();

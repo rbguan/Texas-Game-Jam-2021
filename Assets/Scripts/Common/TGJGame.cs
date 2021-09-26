@@ -5,7 +5,7 @@ using UnityEngine;
 public class TGJGame : Singleton<TGJGame>
 {
     private const int INITIAL_WAIT_SECONDS = 5;
-    private const int WAIT_BETWEEN_WAVES_SECONDS = 10;
+    private const int WAIT_BETWEEN_WAVES_SECONDS = 1;
 
     [SerializeField] private int waves;
 
@@ -22,6 +22,7 @@ public class TGJGame : Singleton<TGJGame>
     {
         LevelGenerator.Current.GenerateLevel();
         StartCoroutine(GameRoutine());
+        AudioManager.Current.PlayGameMusic();
     }
 
     public IEnumerator GameRoutine()
@@ -52,6 +53,6 @@ public class TGJGame : Singleton<TGJGame>
 
     private void UnlockPortal()
     {
-
+        LevelInfo.portalObject.SetActive(true);
     }
 }
