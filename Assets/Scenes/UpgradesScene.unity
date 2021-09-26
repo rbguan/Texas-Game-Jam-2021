@@ -405,21 +405,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7980897333655738858, guid: ed68945b9af74e447b97c407bce95de7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.0015258789
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980897333655738858, guid: ed68945b9af74e447b97c407bce95de7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7980897334447694023, guid: ed68945b9af74e447b97c407bce95de7, type: 3}
       propertyPath: m_Name
       value: Level Loader
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980897334447694023, guid: ed68945b9af74e447b97c407bce95de7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7980897334447694136, guid: ed68945b9af74e447b97c407bce95de7, type: 3}
       propertyPath: m_RootOrder
