@@ -123,13 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &661803342
+--- !u!1001 &1993225656
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1271424683755011144, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3078346447344478569, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -192,7 +196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4934164119727106830, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
       propertyPath: currentLevel.maxSections
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4934164119727106830, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
       propertyPath: sectionPrefabs.Array.size
