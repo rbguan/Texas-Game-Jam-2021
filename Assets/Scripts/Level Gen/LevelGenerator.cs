@@ -95,7 +95,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
     private void PlacePlayer()
     {
         Section spawnSection = CurrentLevel.sections[Random.Range(0, CurrentLevel.sections.Count)];
-        Vector3 spawnPosition = new Vector3(spawnSection.position.x, 0, spawnSection.position.y) * 20 + new Vector3(-10, 0, 10);
+        Vector3 spawnPosition = new Vector3(spawnSection.position.x, 0, spawnSection.position.y) * 20 + new Vector3(-10, 1, 10);
         GameObject playerPrefab = Assets.Get<GameObject>("Player");
         if (!PlayerInfo.playerObject)
             PlayerInfo.playerObject = Instantiate(playerPrefab);
