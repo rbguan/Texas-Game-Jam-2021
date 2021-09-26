@@ -8,6 +8,7 @@ public class TGJGame : Singleton<TGJGame>
     private const int WAIT_BETWEEN_WAVES_SECONDS = 1;
 
     [SerializeField] private int waves;
+    [SerializeField] private GameObject findWayToExitText;
 
     private WaitForSeconds initialWait = new WaitForSeconds(INITIAL_WAIT_SECONDS);
     private WaitForSeconds waitBetweenWaves = new WaitForSeconds(WAIT_BETWEEN_WAVES_SECONDS);
@@ -54,5 +55,6 @@ public class TGJGame : Singleton<TGJGame>
     private void UnlockPortal()
     {
         LevelInfo.portalObject.SetActive(true);
+        findWayToExitText?.SetActive(true);
     }
 }
