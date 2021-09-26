@@ -786,10 +786,10 @@ MonoBehaviour:
   _playerSFXAudioSource: {fileID: 8010661154735361789}
   _enemySFXAudioSource: {fileID: 2840538289134407189}
   _footstepAudioSource: {fileID: 4028989081071858710}
-  titleMusicAudio: {fileID: 8300000, guid: 0f043308ed6fe244b911d325b34a7986, type: 3}
+  titleMusicAudio: {fileID: 8300000, guid: 8eaaa8e5fb9c85747992827b9a2c289a, type: 3}
   gameMusicAudio: {fileID: 8300000, guid: 1b3a4006104ef534788454b247ace564, type: 3}
   lightningAudio: {fileID: 8300000, guid: 54b792c08d99f1c4db183ea53ba7b006, type: 3}
-  rodPlaceAudio: {fileID: 8300000, guid: 35824f591edc71d4aaba9a99a34930c6, type: 3}
+  rodPlaceAudio: {fileID: 8300000, guid: 67d6413bbb3a6e94a9a8ef878ed27753, type: 3}
   playerDamageAudio: {fileID: 8300000, guid: ed3d9b6f483a9a046839d148cdc3b5f4, type: 3}
   footstepAudio:
   - {fileID: 8300000, guid: feb7674d40a26264daf30b87d04a76e4, type: 3}

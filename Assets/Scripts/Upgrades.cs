@@ -68,7 +68,6 @@ public class Upgrades : MonoBehaviour
         upgradeButtons.Add(SpeedButton);
         upgradeButtons.Add(RodsButton);
         upgradeButtons.Add(HealthButton);
-        InitializeUpgradeGraphics();
     }
     public void UpgradeDamage()
     {
