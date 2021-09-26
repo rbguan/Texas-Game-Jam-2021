@@ -8,6 +8,7 @@ public class Brain : EntityPart
     public State currentState;
     public State chaseState;
     public State attackingState;
+    public State stunnedState;
 
     [SerializeField] private AIDestinationSetter destinationSetter;
 
@@ -26,6 +27,7 @@ public class Brain : EntityPart
         base.Awake();
         chaseState = new Chase(this);
         attackingState = new Attacking(this);
+        stunnedState = new Stunned(this);
     }
 
     private void Start()

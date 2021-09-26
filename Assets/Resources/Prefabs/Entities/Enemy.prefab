@@ -877,6 +877,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1889792051761448168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6434407791862394231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f710ff51d42858d438fe52420d3ece62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 4785282187038220512}
+  exp: 1
 --- !u!114 &3392164783781125521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1060,6 +1074,14 @@ PrefabInstance:
       propertyPath: movement
       value: 
       objectReference: {fileID: 3921544279172719785}
+    - target: {fileID: 4816854331577473428, guid: 666a85e599bd9f748af99a00eb546ab3, type: 3}
+      propertyPath: hp
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816854331577473428, guid: 666a85e599bd9f748af99a00eb546ab3, type: 3}
+      propertyPath: maxHp
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4873740379169427307, guid: 666a85e599bd9f748af99a00eb546ab3, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1103,11 +1125,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2822242943226558459, guid: 666a85e599bd9f748af99a00eb546ab3, type: 3}
   m_PrefabInstance: {fileID: 9106565190122052236}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7725708248905466521 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1537484986292721685, guid: 666a85e599bd9f748af99a00eb546ab3, type: 3}
-  m_PrefabInstance: {fileID: 9106565190122052236}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7950349804067575600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1167652540584742332, guid: 666a85e599bd9f748af99a00eb546ab3, type: 3}
@@ -1124,3 +1141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d53b0e0797d72f44961255e1395f904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &7725708248905466521 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1537484986292721685, guid: 666a85e599bd9f748af99a00eb546ab3, type: 3}
+  m_PrefabInstance: {fileID: 9106565190122052236}
+  m_PrefabAsset: {fileID: 0}
