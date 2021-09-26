@@ -12,12 +12,10 @@ public class MenuButtonTweening : MonoBehaviour
     [SerializeField][Range(0,2)] private float ButtonDropdownWaitTime;
     [SerializeField][Range(0,2)] private float TimeGapBetweenEachDrop;
     [SerializeField] private AnimationCurve ButtonDropdownCurve;
-    [SerializeField][Range(0,1)] private float ButtonDropdownSquashFactor;
+    [SerializeField][Range(0,2)] private float ButtonPopInScale;
+    [SerializeField][Range(0,2)] private float TitlePopInScale;
     [SerializeField] private AnimationCurve ButtonDropdownScaleCurve;
-    [SerializeField][Range(0,1)] private float TitleY;
-    [SerializeField][Range(0,1)] private float PlayButtonY;
-    [SerializeField][Range(0,1)] private float HowToPlayButtonY;
-    [SerializeField][Range(0,1)] private float QuitButtonY;
+    [SerializeField] private AnimationCurve TitleDropdownScaleCurve;
     [SerializeField] private AnimationCurve ButtonHoverScaleCurve;
     [SerializeField] private RectTransform Title;
     [SerializeField] private RectTransform PlayButton;
@@ -47,23 +45,27 @@ public class MenuButtonTweening : MonoBehaviour
     {
         Sequence QuitButtonSequence = DOTween.Sequence();
         QuitButtonSequence.AppendInterval(TimeGapBetweenEachDrop);
-        QuitButtonSequence.Append(QuitButton.DOMoveY(Screen.height * QuitButtonY, ButtonDropdownTime).SetEase(ButtonDropdownCurve));
-        QuitButtonSequence.Join(QuitButton.DOScaleY(ButtonDropdownSquashFactor, ButtonDropdownTime).SetEase(ButtonDropdownScaleCurve));
+        // QuitButtonSequence.Append(QuitButton.DOMoveY(Screen.height * QuitButtonY, ButtonDropdownTime).SetEase(ButtonDropdownCurve));
+        QuitButtonSequence.Join(QuitButton.DOScale(ButtonPopInScale, ButtonDropdownTime).SetEase(ButtonDropdownScaleCurve));
+        QuitButton.GetComponent<Image>().DOFade(1, ButtonDropdownTime);
 
         Sequence HowToPlayButtonSequence = DOTween.Sequence();
         HowToPlayButtonSequence.AppendInterval(TimeGapBetweenEachDrop * 2);
-        HowToPlayButtonSequence.Append(HowToPlayButton.DOMoveY(Screen.height * HowToPlayButtonY, ButtonDropdownTime).SetEase(ButtonDropdownCurve));
-        HowToPlayButtonSequence.Join(HowToPlayButton.DOScaleY(ButtonDropdownSquashFactor, ButtonDropdownTime).SetEase(ButtonDropdownScaleCurve));
+        HowToPlayButtonSequence.Append(HowToPlayButton.DOScale(ButtonPopInScale, ButtonDropdownTime).SetEase(ButtonDropdownScaleCurve));
+        QuitButton.GetComponent<Image>().DOFade(1, ButtonDropdownTime);
+        // HowToPlayButtonSequence.Join(HowToPlayButton.DOScaleY(ButtonPopInScale, ButtonDropdownTime).SetEase(ButtonDropdownScaleCurve));
 
         Sequence PlayButtonSequence = DOTween.Sequence();
         PlayButtonSequence.AppendInterval(TimeGapBetweenEachDrop * 3);
-        PlayButtonSequence.Append(PlayButton.DOMoveY(Screen.height * PlayButtonY, ButtonDropdownTime).SetEase(ButtonDropdownCurve));
-        PlayButtonSequence.Join(PlayButton.DOScaleY(ButtonDropdownSquashFactor, ButtonDropdownTime).SetEase(ButtonDropdownScaleCurve));
+        PlayButtonSequence.Append(PlayButton.DOScale(ButtonPopInScale, ButtonDropdownTime).SetEase(ButtonDropdownScaleCurve));
+        // PlayButtonSequence.Join(PlayButton.DOScaleY(ButtonPopInScale, ButtonDropdownTime).SetEase(ButtonDropdownScaleCurve));
+        QuitButton.GetComponent<Image>().DOFade(1, ButtonDropdownTime);
         
         Sequence TitleSequence = DOTween.Sequence();
         TitleSequence.AppendInterval(TimeGapBetweenEachDrop * 4);
-        TitleSequence.Append(Title.DOMoveY(Screen.height * TitleY, ButtonDropdownTime).SetEase(ButtonDropdownCurve));
-        TitleSequence.Join(Title.DOScaleY(ButtonDropdownSquashFactor, ButtonDropdownTime).SetEase(ButtonDropdownScaleCurve));    
+        TitleSequence.Append(Title.DOScale(TitlePopInScale, ButtonDropdownTime).SetEase(ButtonDropdownScaleCurve));
+        // TitleSequence.Join(Title.DOScaleY(ButtonPopInScale, ButtonDropdownTime).SetEase(ButtonDropdownScaleCurve)); 
+        QuitButton.GetComponent<Image>().DOFade(1, ButtonDropdownTime);
         
         Sequence LoadSequence = DOTween.Sequence();
         LoadSequence.AppendInterval(ButtonDropdownWaitTime);

@@ -18,8 +18,39 @@ public static class SectionPlacementHandler
         Vector3 worldPosition = new Vector3(position.x, 0, position.y) * ROOM_SIZE * TILE_SIZE;
         GameObject gameObject = Object.Instantiate(prefab, worldPosition, Quaternion.identity, ParentManager.Level);
         section = gameObject.GetComponent<Section>();
+        section.position = position;
         LevelGenerator.CurrentLevel.grid[position] = section;
         LevelGenerator.CurrentLevel.sections.Add(section);
         return true;
+    }
+
+    public static void PlaceBarriersAroundSection(Section section)
+    {
+        Vector2Int startPosition = section.position;
+        TGrid<Section> grid = LevelGenerator.CurrentLevel.grid;
+        for (int xOffset = -1; xOffset <= 1; xOffset++)
+            for (int yOffset = -1; yOffset <= 1; yOffset++)
+            {
+                Vector2Int offset = new Vector2Int(xOffset, yOffset);
+                Vector2Int position = startPosition + offset;
+                if (!grid.IsWithinBounds(position))
+                {
+                    if (!IsBarrierInPosition(position))
+                        PlaceBarrier(position);
+                }
+                else if (!grid[position] && !IsBarrierInPosition(position))
+                    PlaceBarrier(position);
+            }
+    }
+
+    private static bool IsBarrierInPosition(Vector2Int position) => 
+        LevelGenerator.CurrentLevel.barriers.Contains(position);
+
+    private static void PlaceBarrier(Vector2Int position)
+    {
+        GameObject prefab = Assets.Get<GameObject>("Barrier Section");
+        Vector3 worldPosition = new Vector3(position.x, 0, position.y) * ROOM_SIZE * TILE_SIZE;
+        GameObject gameObject = Object.Instantiate(prefab, worldPosition, Quaternion.identity, ParentManager.Level);
+        LevelGenerator.CurrentLevel.barriers.Add(position);
     }
 }

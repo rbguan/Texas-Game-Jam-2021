@@ -8,12 +8,24 @@ public class PlayerLightning : MonoBehaviour
     [SerializeField] private GameObject lightningAttackPrefab;
     [SerializeField] private LightningStrike lightningSfx;
     [SerializeField] private Camera myCamera;
+    [SerializeField] private Animator myAnimator;
     [SerializeField] private float lightningLifeTime = 1f;
     private List<GameObject> lightningRodsSummoned;
     private List<GameObject> lightningSummoned;
     private bool canPlaceRod = true;
     private float lightningCooldownLeft;
     private bool canAttack = true;
+
+    public Camera MyCamera
+    {
+        get
+        {
+            if (!myCamera)
+                myCamera = FindObjectOfType<Camera>();
+            return myCamera;
+        }
+    }
+
     void Start()
     {
         lightningRodsSummoned = new List<GameObject>();
@@ -46,7 +58,7 @@ public class PlayerLightning : MonoBehaviour
         {
             canPlaceRod = false;
         }
-        Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = MyCamera.ScreenPointToRay(Input.mousePosition);
         Vector3 rodSpawnPosition;
         if(Physics.Raycast(ray, out RaycastHit hit))
         {
@@ -74,6 +86,8 @@ public class PlayerLightning : MonoBehaviour
         {
             return;
         }
+        myAnimator.SetBool("goAttack", true);
+        Debug.Log("lightning animation");
         canAttack = false;
         StartCoroutine(AttackCooldown());
         for(int rodNum = 0; rodNum < lightningRodsSummoned.Count; rodNum++)
@@ -116,6 +130,7 @@ public class PlayerLightning : MonoBehaviour
         {
             Destroy(lightning);
         }
+        myAnimator.SetBool("goAttack", false);
         lightningSummoned.Clear();
     }
 
