@@ -13,4 +13,14 @@ public class Attack : ScriptableObject
     {
 
     }
+
+    public IEnumerator Fire()
+    {
+        yield break;
+    }
+
+    public void End()
+    {
+
+    }
 }

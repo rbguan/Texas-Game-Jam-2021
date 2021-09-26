@@ -9,6 +9,7 @@ public class Entity : MonoBehaviour
     [Header("Parts")]
     [SerializeField] private Animator animator;
     [SerializeField] private Brain brain;
+    [SerializeField] private Combat combat;
     [SerializeField] private Hitpoints hitpoints;
     [SerializeField] private Movement movement;
     [SerializeField] private Rigidbody body;
@@ -30,6 +31,16 @@ public class Entity : MonoBehaviour
             if (!brain)
                 brain = GetComponentInChildren<Brain>();
             return brain;
+        }
+    }
+
+    public Combat Combat
+    {
+        get
+        {
+            if (!combat)
+                combat = GetComponentInChildren<Combat>();
+            return combat;
         }
     }
 
