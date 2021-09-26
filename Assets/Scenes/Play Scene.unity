@@ -260,17 +260,35 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2402920110073805483, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
+      propertyPath: m_Text
+      value: 'Find your way to the exit portal!
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402920110073805483, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3266945713318327721, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
       propertyPath: m_Name
       value: --- Scene ---
       objectReference: {fileID: 0}
     - target: {fileID: 3827343976216056584, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 907
       objectReference: {fileID: 0}
     - target: {fileID: 3827343976216056584, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 144
+      objectReference: {fileID: 0}
+    - target: {fileID: 3827343976216056584, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3827343976216056584, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 412.875
       objectReference: {fileID: 0}
     - target: {fileID: 4336664086238461731, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
       propertyPath: m_RootOrder
@@ -325,8 +343,28 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7974888273182929073, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974888273182929073, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974888273182929073, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
       propertyPath: m_SortingLayerID
       value: -522391251
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575522922639560119, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575522922639560119, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575522922639560119, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
