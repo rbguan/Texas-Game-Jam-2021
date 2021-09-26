@@ -92,7 +92,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myTransform: {fileID: 3102597903323715224}
-  mySpeed: 15
+  bugModelTransform: {fileID: 259024930724464630}
+  myAnimator: {fileID: 5082617498105989559}
+  mySpeed: 5
 --- !u!114 &2896894858631899003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,13 +112,13 @@ MonoBehaviour:
   lightningDamage: 1
   exp: 0
   width: 1
-  speed: 15
-  startRods: 0
-  startAttackCooldown: 0
-  startLightningDamage: 0
-  startWidth: 0
-  startHealth: 0
-  startSpeed: 0
+  speed: 5
+  startRods: 2
+  startAttackCooldown: 2
+  startLightningDamage: 1
+  startWidth: 1
+  startHealth: 5
+  startSpeed: 5
 --- !u!114 &2975317775784638448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +135,7 @@ MonoBehaviour:
   lightningAttackPrefab: {fileID: 1953876769234357562, guid: 401fd13c3a80a884b9bf6513e1eac953, type: 3}
   lightningSfx: {fileID: 8783911915304255482}
   myCamera: {fileID: 0}
+  myAnimator: {fileID: 5082617498105989559}
   lightningLifeTime: 1
 --- !u!54 &1745960997
 Rigidbody:

@@ -12,7 +12,12 @@ ModelImporter:
   - first:
       74: 2867149941237789312
     second: bird|bird_run
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bird_material
+    second: {fileID: 2100000, guid: cc295ba2352396b49a81bbccd868ba7a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
