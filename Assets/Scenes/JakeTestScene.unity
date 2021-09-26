@@ -355,6 +355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bird
       objectReference: {fileID: 0}
+    - target: {fileID: 999433135698343443, guid: 8ac34d77e3521bd47972b330322aea15, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cc295ba2352396b49a81bbccd868ba7a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ac34d77e3521bd47972b330322aea15, type: 3}
 --- !u!1001 &2079505263
