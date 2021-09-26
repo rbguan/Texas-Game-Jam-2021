@@ -46,6 +46,9 @@ public class PlayerLightning : MonoBehaviour
     {
         lightningRodsSummoned = new List<GameObject>();
         lightningSummoned = new List<GameObject>();
+        // if (!myCamera)
+        //         myCamera = FindObjectOfType<Camera>();
+        // mySFXCamera = myCamera.GetComponentsInChildren<Camera>()[0];
     }
 
     // Update is called once per frame
@@ -112,6 +115,7 @@ public class PlayerLightning : MonoBehaviour
         }
         AudioManager.Current.PlayLightningSFX();
         MyCamera.DOShakePosition(attackShakeDuration, attackShakeStrength, attackShakeVibrato, attackShakeRandomness);
+        // mySFXCamera.DOShakePosition(attackShakeDuration, attackShakeStrength, attackShakeVibrato, attackShakeRandomness);
         myAnimator.SetTrigger("goAttack");
         // Debug.Log("lightning animation");
         canAttack = false;
@@ -137,10 +141,11 @@ public class PlayerLightning : MonoBehaviour
     private void SpawnLightning(Vector3 rod1, Vector3 rod2)
     {
         Vector3 spawnPos = (rod1 + rod2)/2;
-        spawnPos.y = 0;
+        spawnPos.y = 1;
         GameObject newLightning = Instantiate(lightningAttackPrefab, spawnPos, Quaternion.identity);
         float z = Vector3.Distance(rod1, rod2);
         Transform sfxModel = newLightning.GetComponentsInChildren<Transform>()[1];
+        rod2.y += 1;
         newLightning.transform.LookAt(rod2);
         sfxModel.transform.localScale = new Vector3(1 * PlayerStats.Current.Width, z * .5f, 1);
         sfxModel.transform.Rotate(Vector3.right, 90);
