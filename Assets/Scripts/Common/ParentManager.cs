@@ -25,6 +25,7 @@ public class ParentManager : MonoBehaviour
             transform = GameObject.Find(name)?.transform;
         if (transform)
             return transform;
-        throw new Exception("Could not find parent transform named " + name);
+        //throw new Exception("Could not find parent transform named " + name);
+        return null;
     }
 }

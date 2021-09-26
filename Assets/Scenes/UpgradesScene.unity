@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -524,30 +524,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6125709684037748719, guid: 2cd65413fb4dcb64c8afc24dd0cd0155, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6125709684221451862, guid: 2cd65413fb4dcb64c8afc24dd0cd0155, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1427783020}
-    - target: {fileID: 8391758289800037304, guid: 2cd65413fb4dcb64c8afc24dd0cd0155, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 170.6826
-      objectReference: {fileID: 0}
-    - target: {fileID: 8391758289800037304, guid: 2cd65413fb4dcb64c8afc24dd0cd0155, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 96.009
-      objectReference: {fileID: 0}
-    - target: {fileID: 8391758289800037304, guid: 2cd65413fb4dcb64c8afc24dd0cd0155, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8391758289800037304, guid: 2cd65413fb4dcb64c8afc24dd0cd0155, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8391758291750052362, guid: 2cd65413fb4dcb64c8afc24dd0cd0155, type: 3}
       propertyPath: m_Name
       value: UpgradeCanvas
