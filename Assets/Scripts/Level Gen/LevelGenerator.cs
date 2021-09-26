@@ -54,6 +54,8 @@ public class LevelGenerator : Singleton<LevelGenerator>
         Vector3 spawnPosition = new Vector3(spawnSection.position.x, 0, spawnSection.position.y) * 20 + new Vector3(-10, 0, 10);
         GameObject playerPrefab = Assets.Get<GameObject>("Player");
         PlayerInfo.playerObject = Instantiate(playerPrefab, spawnPosition, Quaternion.identity, ParentManager.Entities);
+        FollowerCamera.SnapToPlayer();
+        FollowerCamera.Current.target = PlayerInfo.playerObject.transform;
     }
 
     private void GenerateAStarGraph()

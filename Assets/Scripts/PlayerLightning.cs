@@ -14,6 +14,17 @@ public class PlayerLightning : MonoBehaviour
     private bool canPlaceRod = true;
     private float lightningCooldownLeft;
     private bool canAttack = true;
+
+    public Camera MyCamera
+    {
+        get
+        {
+            if (!myCamera)
+                myCamera = FindObjectOfType<Camera>();
+            return myCamera;
+        }
+    }
+
     void Start()
     {
         lightningRodsSummoned = new List<GameObject>();
@@ -46,7 +57,7 @@ public class PlayerLightning : MonoBehaviour
         {
             canPlaceRod = false;
         }
-        Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = MyCamera.ScreenPointToRay(Input.mousePosition);
         Vector3 rodSpawnPosition;
         if(Physics.Raycast(ray, out RaycastHit hit))
         {

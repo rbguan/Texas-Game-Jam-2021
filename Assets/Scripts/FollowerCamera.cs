@@ -3,7 +3,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class FollowerCamera : MonoBehaviour
+public class FollowerCamera : Singleton<FollowerCamera>
 {
     public Transform target;
     public float smoothTime = 0.3f;
@@ -15,5 +15,10 @@ public class FollowerCamera : MonoBehaviour
         Vector3 goalPos = target.position;
         goalPos.y = transform.position.y;
         transform.position = Vector3.SmoothDamp(transform.position, goalPos, ref velocity, smoothTime);
+    }
+
+    public static void SnapToPlayer()
+    {
+        Current.transform.position = PlayerInfo.playerObject.transform.position + new Vector3(0, 12.48f, -2.03f);
     }
 }
