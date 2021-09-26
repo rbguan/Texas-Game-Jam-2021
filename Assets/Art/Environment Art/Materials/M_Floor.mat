@@ -110,7 +110,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_04309f28e0e745a6b3e6c99b9e0b328e: 16
-    - Vector1_1: 1
+    - Vector1_1: 0
     - Vector1_36e7dfec7e7a4c0a83b74f4f369cf619: 0
     - Vector1_397a43eb39354951a83971c7bbdcf2bc: 16
     - Vector1_6baf97d316684c58b68b227aea314cec: 1
