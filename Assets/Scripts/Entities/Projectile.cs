@@ -17,8 +17,7 @@ public class Projectile : MonoBehaviour
         PlayerStats playerStats = other.GetComponentInParent<PlayerStats>();
         if (playerStats)
         {
-            playerStats.CurrentHealth -= damage;
-            Debug.Log("Player hit! -1");
+            playerStats.TakeDamage( damage);
             Destroy(gameObject);
         }
     }

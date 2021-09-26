@@ -78,6 +78,12 @@ public class PlayerStats : Singleton<PlayerStats>
         }
     }
 
+    public void TakeDamage(int amount)
+    {
+        CurrentHealth -= amount;
+
+    }
+
     public void DamageUp(int increment)
     {
         lightningDamage += increment;
