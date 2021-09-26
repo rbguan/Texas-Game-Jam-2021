@@ -13,6 +13,16 @@ public class Entity : MonoBehaviour
     [SerializeField] private Movement movement;
     [SerializeField] private Rigidbody body;
 
+    public Animator Animator
+    {
+        get
+        {
+            if (!animator)
+                animator = GetComponentInChildren<Animator>();
+            return animator;
+        }
+    }
+
     public Brain Brain
     {
         get

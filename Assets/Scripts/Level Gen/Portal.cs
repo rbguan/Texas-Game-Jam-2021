@@ -6,6 +6,10 @@ public class Portal : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-
+        if (other.GetComponentInParent<PlayerStats>())
+        {
+            LevelLoadTransitions levelLoadTransitions = FindObjectOfType<LevelLoadTransitions>();
+            levelLoadTransitions.LoadPlayScene();
+        }
     }
 }
