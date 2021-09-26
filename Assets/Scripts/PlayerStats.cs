@@ -55,7 +55,7 @@ public class PlayerStats : Singleton<PlayerStats>
                 Die();
         }
     }
-    private int fullHealth;
+    public int fullHealth;
     [SerializeField] private int startRods;
     [SerializeField] private float startAttackCooldown;
     [SerializeField] private int startLightningDamage;
