@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleOnDeath : MonoBehaviour
+public class ParticleOnDeath : EntityPart   
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject particleObject;
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        Instantiate(particleObject, transform.position, Quaternion.identity, ParentManager.Temp);
     }
 }
