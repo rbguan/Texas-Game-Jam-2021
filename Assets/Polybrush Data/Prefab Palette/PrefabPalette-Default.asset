@@ -17,9 +17,9 @@ MonoBehaviour:
     settings:
       m_Strength: 89.51681
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
-      m_RotationRangeMax: {x: 0, y: 0, z: 0}
-      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
-      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_RotationRangeMax: {x: 20, y: 360, z: 20}
+      m_ScaleRangeMin: {x: 0.83623695, y: 0.8606272, z: 0.87108004}
+      m_ScaleRangeMax: {x: 1.2543516, y: 1.2090592, z: 1.2195121}
       m_UniformScale: {x: 1, y: 1}
       m_UniformBool: 0
       m_XRotationBool: 0
