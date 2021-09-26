@@ -25,6 +25,7 @@ public class AudioManager : Singleton<AudioManager>
     public AudioClip rodPlaceAudio;
     public AudioClip rodRecallAudio;
     public AudioClip playerDamageAudio;
+    public AudioClip playerDeathAudio;
     public AudioClip uiUnavailableAudio;
     public AudioClip[] footstepAudio;
     public AudioClip[] enemyDamageAudio;
@@ -81,6 +82,15 @@ public class AudioManager : Singleton<AudioManager>
     {
         _playerSFXAudioSource.pitch = Random.Range(1f, 1.5f);
         _playerSFXAudioSource.clip = playerDamageAudio;
+        _playerSFXAudioSource.loop = false;
+    
+        _playerSFXAudioSource.Play();
+    }
+
+        public void PlayPlayerDeathSFX()
+    {
+        _playerSFXAudioSource.pitch = Random.Range(1f, 1.5f);
+        _playerSFXAudioSource.clip = playerDeathAudio;
         _playerSFXAudioSource.loop = false;
     
         _playerSFXAudioSource.Play();

@@ -171,6 +171,7 @@ public class PlayerStats : Singleton<PlayerStats>
 
     private void Die()
     {
+        AudioManager.Current.PlayPlayerDeathSFX();
         LevelLoadTransitions levelLoadTransition = FindObjectOfType<LevelLoadTransitions>();
         levelLoadTransition.Lose();
         //gameObject.SetActive(false);

@@ -64,6 +64,7 @@ public class PlayerLightning : MonoBehaviour
             else
             {
                 //ERROR NOISE
+                AudioManager.Current.PlayUIUnavailableSFX();
             }
         }
         else if(Input.GetKeyDown(KeyCode.Space))
@@ -147,6 +148,7 @@ public class PlayerLightning : MonoBehaviour
         if(!canAttack || lightningRodsSummoned.Count < 1)
         {
             //ERROR SOUND
+            AudioManager.Current.PlayUIUnavailableSFX();
             return;
         }
         AudioManager.Current.PlayLightningSFX();
