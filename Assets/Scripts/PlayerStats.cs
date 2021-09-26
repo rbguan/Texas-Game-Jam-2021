@@ -62,9 +62,6 @@ public class PlayerStats : Singleton<PlayerStats>
     [SerializeField] private float startWidth;
     [SerializeField] private int startHealth;
     [SerializeField] private int startSpeed;
-
-    
-
     private void Update()
     {
         //TODO: Remove this
@@ -117,6 +114,43 @@ public class PlayerStats : Singleton<PlayerStats>
         ResetStats();
     }
 
+    private int damageLevel;
+    public int DamageLevel
+    {
+        get {return damageLevel;} 
+        set {damageLevel = value;}
+    }
+    private int widthLevel;
+    public int WidthLevel
+    {
+        get {return widthLevel;} 
+        set {widthLevel = value;}
+    }
+    private int attackSpeedLevel;
+    public int AttackSpeedLevel
+    {
+        get {return attackSpeedLevel;} 
+        set {attackSpeedLevel = value;}
+    }
+    private int speedLevel;
+    public int SpeedLevel
+    {
+        get {return speedLevel;} 
+        set {speedLevel = value;}
+    }
+    private int rodsLevel;
+    public int RodsLevel
+    {
+        get {return rodsLevel;} 
+        set {rodsLevel = value;}
+    }
+    private int healthLevel;
+    public int HealthLevel
+    {
+        get {return healthLevel;} 
+        set {healthLevel = value;}
+    }
+
     public void ResetStats()
     {
         maxRods = startRods;
@@ -127,6 +161,12 @@ public class PlayerStats : Singleton<PlayerStats>
         fullHealth = startHealth;
         currentHealth = fullHealth;
         exp = 0;
+        damageLevel = 1;
+        widthLevel = 1;
+        attackSpeedLevel = 1;
+        speedLevel = 1;
+        rodsLevel = 1;
+        healthLevel = 1;
     }
 
     private void Die()
