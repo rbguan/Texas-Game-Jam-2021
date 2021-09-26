@@ -110,7 +110,7 @@ public class Upgrades : MonoBehaviour
             UpdateExpCounter(currSpeedCost);
             PlayerStats.Current.Exp -= currSpeedCost;
             currSpeedCost += SpeedButtonIncrement;
-            UpdateUpgradeGraphic(RodsButton, RodsButtonIncrement);
+            UpdateUpgradeGraphic(SpeedButton, SpeedButtonIncrement);
             PlayerStats.Current.SpeedUp(SpeedUpIncrement);
         }
     }

@@ -481,6 +481,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1427783020}
+    - target: {fileID: 8391758289800037307, guid: 2cd65413fb4dcb64c8afc24dd0cd0155, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391758289800037307, guid: 2cd65413fb4dcb64c8afc24dd0cd0155, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8d2d3714728369940af8f77b061f336b, type: 3}
+    - target: {fileID: 8391758289800037307, guid: 2cd65413fb4dcb64c8afc24dd0cd0155, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391758289800037307, guid: 2cd65413fb4dcb64c8afc24dd0cd0155, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391758289800037307, guid: 2cd65413fb4dcb64c8afc24dd0cd0155, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391758289800037307, guid: 2cd65413fb4dcb64c8afc24dd0cd0155, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8391758291750052362, guid: 2cd65413fb4dcb64c8afc24dd0cd0155, type: 3}
       propertyPath: m_Name
       value: UpgradeCanvas
