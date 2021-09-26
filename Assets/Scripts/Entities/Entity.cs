@@ -100,6 +100,7 @@ public class Entity : MonoBehaviour
     {
         if (ExpOnKill)
             ExpOnKill.Destroy();
+            AudioManager.Current.PlayEnemyDeathSFX();
         Destroy(gameObject);
     }
 }
