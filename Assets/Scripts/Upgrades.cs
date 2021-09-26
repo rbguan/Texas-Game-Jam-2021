@@ -72,18 +72,22 @@ public class Upgrades : Singleton<Upgrades>
     }
     public void UpgradeDamage()
     {
-        if(PlayerStats.Current.Exp >= currDamageCost)
+        if(PlayerStats.Current.Exp >= currDamageCost && PlayerStats.Current.DamageLevel < DamageMaxLevel)
         {
             UpdateExpCounter(currDamageCost);
             PlayerStats.Current.Exp -= currDamageCost;
             currDamageCost += DamageButtonIncrement;
             UpdateUpgradeGraphic(DamageButton, DamageButtonIncrement);
             PlayerStats.Current.DamageUp(DamageUpIncrement);
+        } 
+        else
+        {
+            AudioManager.Current.PlayUIUnavailableSFX();
         }
     }
     public void UpgradeWidth()
     {
-        if(PlayerStats.Current.Exp >= currWidthCost)
+        if(PlayerStats.Current.Exp >= currWidthCost && PlayerStats.Current.WidthLevel < WidthMaxLevel)
         {
             UpdateExpCounter(currWidthCost);
             PlayerStats.Current.Exp -= currWidthCost;
@@ -91,10 +95,14 @@ public class Upgrades : Singleton<Upgrades>
             UpdateUpgradeGraphic(WidthButton, WidthButtonIncrement);
             PlayerStats.Current.WidthUp(WidthUpIncrement);
         }
+        else
+        {
+            AudioManager.Current.PlayUIUnavailableSFX();
+        }
     }
     public void UpgradeAttackSpeed()
     {
-        if(PlayerStats.Current.Exp >= currAttackSpeedCost)
+        if(PlayerStats.Current.Exp >= currAttackSpeedCost && PlayerStats.Current.AttackSpeedLevel < AttackSpeedMaxLevel)
         {
             UpdateExpCounter(currAttackSpeedCost);
             PlayerStats.Current.Exp -= currAttackSpeedCost;
@@ -102,10 +110,14 @@ public class Upgrades : Singleton<Upgrades>
             UpdateUpgradeGraphic(AttackSpeedButton, AttackSpeedButtonIncrement);
             PlayerStats.Current.AttackSpeedUp(AttackSpeedUpIncrement);
         }
+        else
+        {
+            AudioManager.Current.PlayUIUnavailableSFX();
+        }
     }
     public void UpgradeSpeed()
     {
-        if(PlayerStats.Current.Exp >= currSpeedCost)
+        if(PlayerStats.Current.Exp >= currSpeedCost && PlayerStats.Current.SpeedLevel < SpeedMaxLevel)
         {
             UpdateExpCounter(currSpeedCost);
             PlayerStats.Current.Exp -= currSpeedCost;
@@ -113,10 +125,14 @@ public class Upgrades : Singleton<Upgrades>
             UpdateUpgradeGraphic(SpeedButton, SpeedButtonIncrement);
             PlayerStats.Current.SpeedUp(SpeedUpIncrement);
         }
+        else
+        {
+            AudioManager.Current.PlayUIUnavailableSFX();
+        }
     }
     public void UpgradeRods()
     {
-        if(PlayerStats.Current.Exp >= currRodsCost)
+        if(PlayerStats.Current.Exp >= currRodsCost && PlayerStats.Current.RodsLevel < RodsMaxLevel)
         {
             UpdateExpCounter(currRodsCost);
             PlayerStats.Current.Exp -= currRodsCost;
@@ -124,16 +140,24 @@ public class Upgrades : Singleton<Upgrades>
             UpdateUpgradeGraphic(RodsButton, RodsButtonIncrement);
             PlayerStats.Current.RodsUp(RodsUpIncrement);
         }
+        else
+        {
+            AudioManager.Current.PlayUIUnavailableSFX();
+        }
     }
     public void UpgradeHealth()
     {
-        if(PlayerStats.Current.Exp >= currHealthCost)
+        if(PlayerStats.Current.Exp >= currHealthCost && PlayerStats.Current.HealthLevel < HealthMaxLevel)
         {
             UpdateExpCounter(currHealthCost);
             PlayerStats.Current.Exp -= currHealthCost;
             currHealthCost += HealthButtonIncrement;
             UpdateUpgradeGraphic(HealthButton, HealthButtonIncrement);
             PlayerStats.Current.HealthUp(HealthUpIncrement);
+        }
+        else
+        {
+            AudioManager.Current.PlayUIUnavailableSFX();
         }
     }
     private void UpdateUpgradeGraphic(Button button, int increment)
