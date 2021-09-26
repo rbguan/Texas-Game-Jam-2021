@@ -15,6 +15,7 @@ public class Hitpoints : EntityPart
 
     public void ModifyHp(int amount)
     {
+        AudioManager.Current.PlayEnemyHitSFX();
         hp += amount;
         if (hp <= 0)
             parent.Destroy();
