@@ -32,6 +32,9 @@ public class PlayerMove : MonoBehaviour
             if (LeftRight > 0  && UpDown > 0) { rotation = 45;}
             if (LeftRight < 0  && UpDown < 0) { rotation = -135;}
             if (LeftRight > 0  && UpDown < 0) { rotation = 135;}
+            // bugModelTransform.Rotate()\
+            // Vector3 rotationDifference = new Vector3(0, rotation, 0) - bugModelTransform.rotation.eulerAngles;
+            // bugModelTransform.DORotate(rotationDifference, .05f);
             bugModelTransform.rotation = Quaternion.Euler(0, rotation,0);
         }
     }
