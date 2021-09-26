@@ -15,6 +15,7 @@ public class LightningDamage : MonoBehaviour
         {
             damagedEntities.Add(entity);
             entity.Hitpoints.ModifyHp(-damage);
+            entity.Brain.GoTo(entity.Brain.stunnedState);
             DmgUISpawner.Current.showDmg(damage, entity.transform.position);
             Debug.Log("Hit enemy!");
         }
