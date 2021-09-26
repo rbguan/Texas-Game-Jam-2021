@@ -100,6 +100,8 @@ public class LevelGenerator : Singleton<LevelGenerator>
         if (!PlayerInfo.playerObject)
             PlayerInfo.playerObject = Instantiate(playerPrefab);
         PlayerInfo.playerObject.transform.position = spawnPosition;
+        PlayerStats playerStats = PlayerInfo.playerObject.GetComponent<PlayerStats>();
+        playerStats.CurrentHealth = playerStats.fullHealth;
         FollowerCamera.SnapToPlayer();
         FollowerCamera.Current.target = PlayerInfo.playerObject.transform;
     }

@@ -6,6 +6,8 @@ public class UpgradeScreenResetter : MonoBehaviour
 {
     private void Start()
     {
+        if (!TGJGameManager.Current)
+            return;
         if (!TGJGameManager.Current.hasVisitedUpgrade)
         {
             TGJGameManager.Current.hasVisitedUpgrade = true;
