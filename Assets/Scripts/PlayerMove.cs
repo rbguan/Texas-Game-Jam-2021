@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private Transform myTransform;
+    [SerializeField] private Transform bugModelTransform;
+    [SerializeField] private Animator myAnimator;
     [SerializeField] private float mySpeed = 1f;
     private float LeftRight = 0f;
     private float UpDown = 0f;
@@ -19,6 +21,19 @@ public class PlayerMove : MonoBehaviour
     {
         LeftRight = Input.GetAxis("Horizontal");
         UpDown = Input.GetAxis("Vertical");
+        float rotation = 0;
+        if(LeftRight != 0 || UpDown != 0)
+        {
+            if (LeftRight > 0) { rotation = 90;}
+            if (LeftRight < 0) { rotation = -90;}
+            if (UpDown < 0) { rotation = 180;}
+            if (UpDown >  0) { rotation = 0;}
+            if (LeftRight < 0  && UpDown > 0) { rotation = -45;}
+            if (LeftRight > 0  && UpDown > 0) { rotation = 45;}
+            if (LeftRight < 0  && UpDown < 0) { rotation = -135;}
+            if (LeftRight > 0  && UpDown < 0) { rotation = 135;}
+            bugModelTransform.rotation = Quaternion.Euler(0, rotation,0);
+        }
     }
 
     void FixedUpdate() 
@@ -34,7 +49,6 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            // Debug.Log("hit");
             myRB.MovePosition(hit.point);
         }
  

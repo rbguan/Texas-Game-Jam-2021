@@ -8,6 +8,7 @@ public class PlayerLightning : MonoBehaviour
     [SerializeField] private GameObject lightningAttackPrefab;
     [SerializeField] private LightningStrike lightningSfx;
     [SerializeField] private Camera myCamera;
+    [SerializeField] private Animator myAnimator;
     [SerializeField] private float lightningLifeTime = 1f;
     private List<GameObject> lightningRodsSummoned;
     private List<GameObject> lightningSummoned;
@@ -85,6 +86,8 @@ public class PlayerLightning : MonoBehaviour
         {
             return;
         }
+        myAnimator.SetBool("goAttack", true);
+        Debug.Log("lightning animation");
         canAttack = false;
         StartCoroutine(AttackCooldown());
         for(int rodNum = 0; rodNum < lightningRodsSummoned.Count; rodNum++)
@@ -127,6 +130,7 @@ public class PlayerLightning : MonoBehaviour
         {
             Destroy(lightning);
         }
+        myAnimator.SetBool("goAttack", false);
         lightningSummoned.Clear();
     }
 
