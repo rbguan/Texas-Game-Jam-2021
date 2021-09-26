@@ -193,6 +193,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20, y: 4, z: 20}
   m_Center: {x: -10, y: 2, z: 10}
+--- !u!65 &5529484987045463053
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389474464475481049}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 4, z: 20}
+  m_Center: {x: -10, y: 2, z: 10}
 --- !u!1001 &60563170705009130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2304,6 +2317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floorpiece_01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2db2c5a730a34124aba104dc1ba846b1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2db2c5a730a34124aba104dc1ba846b1, type: 3}
 --- !u!1 &5277350035189085134 stripped
@@ -3972,6 +3989,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3.59
       objectReference: {fileID: 0}
+    - target: {fileID: 8006426776649961594, guid: 8ee5ec6b2bced604381ae1e2bf906793, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8214672349614038127, guid: 8ee5ec6b2bced604381ae1e2bf906793, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.59
@@ -4018,6 +4039,11 @@ GameObject:
 --- !u!4 &7507983341976351323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 165099777800593912, guid: 8ee5ec6b2bced604381ae1e2bf906793, type: 3}
+  m_PrefabInstance: {fileID: 7672790494795010979}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &389474464475481049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8006426776649961594, guid: 8ee5ec6b2bced604381ae1e2bf906793, type: 3}
   m_PrefabInstance: {fileID: 7672790494795010979}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7108972418100545014 stripped
