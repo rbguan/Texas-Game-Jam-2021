@@ -87,7 +87,7 @@ public class PlayerLightning : MonoBehaviour
         {
             return;
         }
-        myAnimator.SetBool("goAttack", true);
+        myAnimator.SetTrigger("goAttack");
         Debug.Log("lightning animation");
         canAttack = false;
         StartCoroutine(AttackCooldown());
@@ -131,7 +131,6 @@ public class PlayerLightning : MonoBehaviour
         {
             Destroy(lightning);
         }
-        myAnimator.SetBool("goAttack", false);
         lightningSummoned.Clear();
     }
 
