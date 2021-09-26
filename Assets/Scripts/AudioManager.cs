@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
 {
-    //How to play audio--> AudioManager.Instance.PlayMethod();
+    //How to play audio--> AudioManager.Current.PlayMethod();
 
     [Header("Audio Sources")]
     
