@@ -6,7 +6,7 @@ public class ExpOnKill : EntityPart
 {
     public int exp;
 
-    public void Destroy()
+    private void OnDestroy()
     {
         if (PlayerStats.Current)
             PlayerStats.Current.Exp += exp;

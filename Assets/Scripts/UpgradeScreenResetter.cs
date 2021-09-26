@@ -4,20 +4,12 @@ using UnityEngine;
 
 public class UpgradeScreenResetter : MonoBehaviour
 {
-    private void Start()
+    private void Awake()
     {
-        if (!TGJGameManager.Current)
-            return;
         if (!TGJGameManager.Current.hasVisitedUpgrade)
         {
             TGJGameManager.Current.hasVisitedUpgrade = true;
-            Upgrades.Current.ResetUpgradeGraphics();
-            Debug.Log("Resetting Upgrade Graphics");
-        }
-        else
-        {
-            Upgrades.Current.InitializeUpgradeGraphics();
-            Debug.Log("Initializing Upgrade Graphics");
+            
         }
     }
 }

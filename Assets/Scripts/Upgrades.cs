@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Upgrades : Singleton<Upgrades>
+public class Upgrades : MonoBehaviour
 {
     [SerializeField] private Button DamageButton;
     [SerializeField] private int DamageButtonInitialCost;
