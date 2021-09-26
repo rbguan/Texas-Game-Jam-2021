@@ -6,6 +6,8 @@ namespace DefaultNamespace
 {
     public class AudioManager : MonoBehaviour
     {
+        //How to play audio--> AudioManager.Instance.PlayMethod();
+
         [Header("Audio Sources")]
         
         [SerializeField] private AudioSource _musicAudioSource;

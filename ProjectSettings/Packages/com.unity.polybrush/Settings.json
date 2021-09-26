@@ -30,18 +30,8 @@
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-                "key": "Scattering.UsePivotForPlacement",
+                "key": "Mesh.RebuildNormals",
                 "value": "{\"m_Value\":true}"
-            },
-            {
-                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-                "key": "Scattering.ParentObjectsWithSurface",
-                "value": "{\"m_Value\":true}"
-            },
-            {
-                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-                "key": "Scattering.AvoidOverlappingObjects",
-                "value": "{\"m_Value\":false}"
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
@@ -74,14 +64,9 @@
                 "value": "{\"m_Value\":1}"
             },
             {
-                "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-                "key": "ScatteringEditor.PreviewThumSize",
-                "value": "{\"m_Value\":64}"
-            },
-            {
-                "type": "UnityEditor.Polybrush.PrefabLoadout, Unity.Polybrush.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-                "key": "ScatteringEditor.userLoadout",
-                "value": "{\"m_Value\":{\"infos\":[{\"palette\":{\"fileID\":11400000,\"guid\":\"3e109ae96fd89134783e3a10876cca5e\",\"type\":2},\"prefab\":{\"fileID\":919132149155446097,\"guid\":\"750f3a16e6188f442a4ef0e9e9e97f8d\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"3e109ae96fd89134783e3a10876cca5e\",\"type\":2},\"prefab\":{\"fileID\":919132149155446097,\"guid\":\"68821d1095e92b14696ba01ea2bf1c47\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"3e109ae96fd89134783e3a10876cca5e\",\"type\":2},\"prefab\":{\"fileID\":919132149155446097,\"guid\":\"16e2ee6ab6cc6a34db9858eab228f8ec\",\"type\":3}}]}}"
+                "type": "System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "Brush.VertexBillboardSize",
+                "value": "{\"m_Value\":2.0}"
             }
         ]
     }

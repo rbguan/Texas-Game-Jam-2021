@@ -68,6 +68,14 @@ public class PlayerStats : Singleton<PlayerStats>
         //TODO: Remove this
         if (Input.GetKeyDown(KeyCode.LeftControl))
             CurrentHealth = 0;
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            for (int i = Entity.entities.Count - 1; i >= 0; i--)
+            {
+                Entity entity = Entity.entities[i];
+                entity.Destroy();
+            }
+        }
     }
 
     public void DamageUp(int increment)
