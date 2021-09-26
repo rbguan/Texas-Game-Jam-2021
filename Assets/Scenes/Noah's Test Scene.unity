@@ -510,8 +510,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8681c1ffec369564c8c226a70b941e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aStarPrefab: {fileID: 1726132190358376608, guid: 71c2134f91cde0e4ba5cf91995120107, type: 3}
   currentLevel:
     maxSections: 32
     sections: []
+  spawnerCount: 0
   sectionPrefabs:
   - {fileID: 4276677594749166313, guid: 8ee5ec6b2bced604381ae1e2bf906793, type: 3}
