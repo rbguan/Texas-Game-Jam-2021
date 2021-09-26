@@ -96,9 +96,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4718040791104185828, guid: 1d1ee329d25a58249a05fc18b9f5d0e2, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1d1ee329d25a58249a05fc18b9f5d0e2, type: 3}
       propertyPath: m_Name
       value: TreeStump_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280927520727180574, guid: 1d1ee329d25a58249a05fc18b9f5d0e2, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d1ee329d25a58249a05fc18b9f5d0e2, type: 3}
