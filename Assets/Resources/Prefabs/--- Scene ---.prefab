@@ -388,6 +388,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4336664086238461731}
     m_Modifications:
+    - target: {fileID: 9138377891026776767, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138377891026776767, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
+      propertyPath: xOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138377891026776767, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
+      propertyPath: yOffset
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138377891026776767, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
+      propertyPath: zOffset
+      value: -5.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9138377891026776769, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
       propertyPath: m_Name
       value: Game Camera
@@ -410,23 +426,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9138377891026776774, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7660445
+      value: 0.7933534
       objectReference: {fileID: 0}
     - target: {fileID: 9138377891026776774, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.6427876
+      value: 0.60876137
       objectReference: {fileID: 0}
     - target: {fileID: 9138377891026776774, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9138377891026776774, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9138377891026776774, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 80
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 9138377891026776774, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
