@@ -19,7 +19,8 @@ public class MiscSpawner : MonoBehaviour
         for (int i = 0; i < firefliesAmount; i++)
         {
             var spawnLoc = GetRandomPointInsideCollider(gameObject.GetComponent<BoxCollider>());
-            Instantiate(firefly, spawnLoc, Quaternion.identity);
+            var b = Instantiate(firefly, spawnLoc, Quaternion.identity);
+            b.transform.parent = gameObject.transform;
         }
     }
 
