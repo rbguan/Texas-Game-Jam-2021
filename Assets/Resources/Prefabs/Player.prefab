@@ -150,6 +150,9 @@ MonoBehaviour:
   myCamera: {fileID: 0}
   myAnimator: {fileID: 5082617498105989559}
   lightningLifeTime: 1
+  rodPlacementLayermask:
+    serializedVersion: 2
+    m_Bits: 256
   RodPlaceParticlePrefab: {fileID: 2056665373938398218, guid: 8ae881e73676c33498f1625fe298f292, type: 3}
   rodSpawnHeight: 20
   rodSpawnTime: 0.1
