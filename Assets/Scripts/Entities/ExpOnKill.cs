@@ -10,5 +10,6 @@ public class ExpOnKill : EntityPart
     {
         if (PlayerStats.Current)
             PlayerStats.Current.Exp += exp;
+        Debug.Log("Player EXP: " + PlayerStats.Current.Exp);
     }
 }

@@ -68,6 +68,7 @@ public class Upgrades : MonoBehaviour
         upgradeButtons.Add(SpeedButton);
         upgradeButtons.Add(RodsButton);
         upgradeButtons.Add(HealthButton);
+        Debug.Log("player exp in upgrade screen" + PlayerStats.Current.Exp);
     }
     public void UpgradeDamage()
     {
