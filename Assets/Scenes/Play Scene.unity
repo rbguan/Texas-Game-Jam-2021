@@ -130,21 +130,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3078346447344478359, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
-      propertyPath: PlayScene
-      value: Play Scene
-      objectReference: {fileID: 0}
-    - target: {fileID: 3078346447344478569, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3266945713318327721, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
       propertyPath: m_Name
       value: --- Scene ---
-      objectReference: {fileID: 0}
-    - target: {fileID: 4227655578767431906, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4336664086238461731, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
       propertyPath: m_RootOrder
@@ -189,18 +177,6 @@ PrefabInstance:
     - target: {fileID: 4336664086238461731, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4934164119314579870, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
-      propertyPath: m_Color.b
-      value: 0.61960787
-      objectReference: {fileID: 0}
-    - target: {fileID: 4934164119314579870, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
-      propertyPath: m_Color.g
-      value: 0.8156863
-      objectReference: {fileID: 0}
-    - target: {fileID: 4934164119314579870, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
