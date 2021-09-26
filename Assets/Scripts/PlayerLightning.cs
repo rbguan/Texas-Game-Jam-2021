@@ -142,7 +142,7 @@ public class PlayerLightning : MonoBehaviour
         float z = Vector3.Distance(rod1, rod2);
         Transform sfxModel = newLightning.GetComponentsInChildren<Transform>()[1];
         newLightning.transform.LookAt(rod2);
-        sfxModel.transform.localScale = new Vector3(1, z * .5f, 1);
+        sfxModel.transform.localScale = new Vector3(1 * PlayerStats.Current.Width, z * .5f, 1);
         sfxModel.transform.Rotate(Vector3.right, 90);
         lightningSummoned.Add(newLightning);
         
