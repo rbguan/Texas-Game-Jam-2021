@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeafSpawner : MonoBehaviour
+public class MiscSpawner : MonoBehaviour
 {
     public GameObject[] billowingObjects;
+    public GameObject firefly;
+    public int firefliesAmount = 10;
     private float timer = 0;
     private int currAmount = 0;
     public int maxAmount = 20;
@@ -14,7 +16,12 @@ public class LeafSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        for (int i = 0; i < firefliesAmount; i++)
+        {
+            var spawnLoc = GetRandomPointInsideCollider(gameObject.GetComponent<BoxCollider>());
+            var b = Instantiate(firefly, spawnLoc, Quaternion.identity);
+            b.transform.parent = gameObject.transform;
+        }
     }
 
     // Update is called once per frame

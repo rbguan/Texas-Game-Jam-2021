@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4480794888449643890}
   - component: {fileID: 4480794888449643889}
   m_Layer: 0
-  m_Name: LeafSpawner
+  m_Name: MiscSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,6 +64,8 @@ MonoBehaviour:
   - {fileID: 798301855338861985, guid: db983e56963e9854ba009605dcda244f, type: 3}
   - {fileID: 1044180136858002228, guid: 37fa35ce18eca504b8322112cf5c5497, type: 3}
   - {fileID: 2943559453962735235, guid: 0cdcc43b0c7cdc9458530b627ae0826c, type: 3}
+  firefly: {fileID: 8085096840323252335, guid: 1ed2c680d07186a428917799dd5e8044, type: 3}
+  firefliesAmount: 10
   maxAmount: 20
   freqMin: 0
   freqMax: 0
