@@ -83,7 +83,7 @@ public class PlayerStats : Singleton<PlayerStats>
     public void TakeDamage(int amount)
     {
         CurrentHealth -= amount;
-
+        AudioManager.Current.PlayPlayerHitSFX();
     }
 
     public void DamageUp(int increment)
