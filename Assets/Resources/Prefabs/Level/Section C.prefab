@@ -874,6 +874,54 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 42
       objectReference: {fileID: 0}
+    - target: {fileID: 3552558971610809547, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
+      propertyPath: m_PolyMesh.name
+      value: PolybrushMesh97854
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552558971610809547, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
+      propertyPath: m_PolyMesh.m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552558971610809547, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
+      propertyPath: m_PolyMesh.colors.Array.data[3].rgba
+      value: 4294901760
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552558971610809547, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
+      propertyPath: m_PolyMesh.colors.Array.data[7].rgba
+      value: 4294901760
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552558971610809547, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
+      propertyPath: m_PolyMesh.colors.Array.data[13].rgba
+      value: 4294901760
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552558971610809547, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
+      propertyPath: m_PolyMesh.colors.Array.data[14].rgba
+      value: 4294901760
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552558971610809547, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
+      propertyPath: m_PolyMesh.colors.Array.data[18].rgba
+      value: 4294901760
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552558971610809547, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
+      propertyPath: m_PolyMesh.colors.Array.data[20].rgba
+      value: 4294901760
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552558971610809547, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
+      propertyPath: m_PolyMesh.colors.Array.data[21].rgba
+      value: 4294901760
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552558971610809547, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
+      propertyPath: m_PolyMesh.colors.Array.data[22].rgba
+      value: 4294901760
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552558971610809547, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
+      propertyPath: m_PolyMesh.colors.Array.data[23].rgba
+      value: 4294901760
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552558971610809547, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
+      propertyPath: m_PolyMesh.colors.Array.data[24].rgba
+      value: 4294901760
+      objectReference: {fileID: 0}
     - target: {fileID: 3588319737784492926, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
       propertyPath: m_RootOrder
       value: 57

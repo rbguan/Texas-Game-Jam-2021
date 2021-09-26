@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PolyMesh:
-    name: PolybrushMesh48722
+    name: PolybrushMesh98352
     vertices:
     - {x: -1.5, y: 0, z: 2}
     - {x: -2, y: 0, z: 1.5}
@@ -126,15 +126,7 @@ MonoBehaviour:
     - serializedVersion: 2
       rgba: 4294901760
     - serializedVersion: 2
-      rgba: 4294906643
-    - serializedVersion: 2
       rgba: 4294901760
-    - serializedVersion: 2
-      rgba: 4294901760
-    - serializedVersion: 2
-      rgba: 4294901760
-    - serializedVersion: 2
-      rgba: 4294967295
     - serializedVersion: 2
       rgba: 4294901760
     - serializedVersion: 2
@@ -146,9 +138,11 @@ MonoBehaviour:
     - serializedVersion: 2
       rgba: 4294901760
     - serializedVersion: 2
-      rgba: 4294903302
+      rgba: 4294901760
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4294901760
+    - serializedVersion: 2
+      rgba: 4294901760
     - serializedVersion: 2
       rgba: 4294901760
     - serializedVersion: 2
@@ -156,19 +150,25 @@ MonoBehaviour:
     - serializedVersion: 2
       rgba: 4294901760
     - serializedVersion: 2
-      rgba: 4294960613
+      rgba: 4294901760
     - serializedVersion: 2
       rgba: 4294901760
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4294901760
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4294901760
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4294901760
     - serializedVersion: 2
-      rgba: 4294959328
+      rgba: 4294901760
     - serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4294901760
+    - serializedVersion: 2
+      rgba: 4294901760
+    - serializedVersion: 2
+      rgba: 4294901760
+    - serializedVersion: 2
+      rgba: 4294901760
     tangents:
     - {x: -1, y: 0, z: 0, w: -1}
     - {x: -1, y: 0, z: 0, w: -1}
