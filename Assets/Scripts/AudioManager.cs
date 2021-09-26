@@ -15,7 +15,7 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] private AudioSource _playerSFXAudioSource;
     [SerializeField] private AudioSource _enemySFXAudioSource;
     [SerializeField] private AudioSource _footstepAudioSource;
-    
+    [SerializeField] private AudioSource _uiAudioSource;
 
     [Header("Audio Clips")]
 
@@ -23,7 +23,9 @@ public class AudioManager : Singleton<AudioManager>
     public AudioClip gameMusicAudio;
     public AudioClip lightningAudio;
     public AudioClip rodPlaceAudio;
+    public AudioClip rodRecallAudio;
     public AudioClip playerDamageAudio;
+    public AudioClip uiUnavailableAudio;
     public AudioClip[] footstepAudio;
     public AudioClip[] enemyDamageAudio;
     public AudioClip[] enemyDeathAudio;
@@ -46,6 +48,7 @@ public class AudioManager : Singleton<AudioManager>
         _playerSFXAudioSource = audioSources[3];
         _enemySFXAudioSource = audioSources[4];
         _footstepAudioSource = audioSources[5];
+        _uiAudioSource = audioSources[6];
         
         DontDestroyOnLoad(gameObject);
         
@@ -117,6 +120,24 @@ public class AudioManager : Singleton<AudioManager>
         _rodPlaceSFXAudioSource.loop = false;
     
         _rodPlaceSFXAudioSource.Play();
+    }
+
+    public void PlayRodRecallSFX()
+    {
+        _rodPlaceSFXAudioSource.pitch = Random.Range(1f, 1.5f);
+        _rodPlaceSFXAudioSource.clip = rodRecallAudio;
+        _rodPlaceSFXAudioSource.loop = false;
+    
+        _rodPlaceSFXAudioSource.Play();
+    }
+
+    public void PlayUIUnavailableSFX()
+    {
+        _uiAudioSource.pitch = Random.Range(1f, 1.5f);
+        _uiAudioSource.clip = uiUnavailableAudio;
+        _uiAudioSource.loop = false;
+    
+        _uiAudioSource.Play();
     }
 
     public void PlayFootstepSFX()

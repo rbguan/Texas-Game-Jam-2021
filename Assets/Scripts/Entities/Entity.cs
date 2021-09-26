@@ -10,6 +10,7 @@ public class Entity : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Brain brain;
     [SerializeField] private Combat combat;
+    [SerializeField] private ExpOnKill expOnKill;
     [SerializeField] private Hitpoints hitpoints;
     [SerializeField] private Movement movement;
     [SerializeField] private Rigidbody body;
@@ -43,6 +44,17 @@ public class Entity : MonoBehaviour
             return combat;
         }
     }
+
+    public ExpOnKill ExpOnKill
+    {
+        get
+        {
+            if (!expOnKill)
+                expOnKill = GetComponentInChildren<ExpOnKill>();
+            return expOnKill;
+        }
+    }
+
 
     public Hitpoints Hitpoints
     {
@@ -86,6 +98,8 @@ public class Entity : MonoBehaviour
 
     public void Destroy()
     {
+        if (ExpOnKill)
+            ExpOnKill.Destroy();
         Destroy(gameObject);
     }
 }
