@@ -42,6 +42,8 @@ public class Upgrades : MonoBehaviour
     [SerializeField] private int HealthUpIncrement;
     private int currHealthCost;
     [SerializeField] private Text EXPCounter;
+    private List<Button> upgradeButtons;
+    private List<int> initialCosts;
     void Start()
     {
         currDamageCost = DamageButtonInitialCost;
@@ -50,6 +52,23 @@ public class Upgrades : MonoBehaviour
         currSpeedCost = SpeedInitialCost;
         currRodsCost = RodsInitialCost;
         currHealthCost = HealthInitialCost;
+        
+        initialCosts = new List<int>();
+        initialCosts.Add(DamageButtonInitialCost);
+        initialCosts.Add(WidthButtonInitialCost);
+        initialCosts.Add(AttackSpeedInitialCost);
+        initialCosts.Add(SpeedInitialCost);
+        initialCosts.Add(RodsInitialCost);
+        initialCosts.Add(HealthInitialCost);
+
+        upgradeButtons = new List<Button>();
+        upgradeButtons.Add(DamageButton);
+        upgradeButtons.Add(WidthButton);
+        upgradeButtons.Add(AttackSpeedButton);
+        upgradeButtons.Add(SpeedButton);
+        upgradeButtons.Add(RodsButton);
+        upgradeButtons.Add(HealthButton);
+        InitializeUpgradeGraphics();
     }
     public void UpgradeDamage()
     {
@@ -120,13 +139,66 @@ public class Upgrades : MonoBehaviour
     private void UpdateUpgradeGraphic(Button button, int increment)
     {
         Text[] texts = button.GetComponentsInChildren<Text>();
-        Text skillLevelText = texts[0];
-        Text buttonPriceText = texts[1];
+        Text skillLevelText = texts[1];
+        Text buttonPriceText = texts[0];
         skillLevelText.text = (int.Parse(skillLevelText.text) + 1).ToString();
         buttonPriceText.text = (int.Parse(buttonPriceText.text) + increment).ToString();
     }
     private void UpdateExpCounter(int cost)
     {
         EXPCounter.text  = (int.Parse(EXPCounter.text) - cost).ToString();
+    }
+
+    public void ResetUpgradeGraphics()
+    {
+        for(int i = 0; i < upgradeButtons.Count; i++)
+        {
+            Text[] texts = upgradeButtons[i].GetComponentsInChildren<Text>();
+            Text skillLevelText = texts[1];
+            Text buttonPriceText = texts[0];
+            skillLevelText.text = "1";
+            buttonPriceText.text = initialCosts[i].ToString();
+        }
+        EXPCounter.text  = PlayerStats.Current.Exp.ToString();
+    }
+    public void InitializeUpgradeGraphics()
+    {
+        for(int i = 0; i < upgradeButtons.Count; i++)
+        {
+            Text[] texts = upgradeButtons[i].GetComponentsInChildren<Text>();
+            Text skillLevelText = texts[1];
+            Text buttonPriceText = texts[0];
+            switch(i)
+            {
+                case 0:
+                    skillLevelText.text = PlayerStats.Current.DamageLevel.ToString();
+                    buttonPriceText.text = (DamageButtonInitialCost + (DamageButtonIncrement * PlayerStats.Current.DamageLevel - 1)).ToString();
+                    break;
+                case 1:
+                    skillLevelText.text = PlayerStats.Current.WidthLevel.ToString();
+                    buttonPriceText.text = (WidthButtonInitialCost + (WidthButtonIncrement * PlayerStats.Current.WidthLevel - 1)).ToString();
+                    break;
+                case 2:
+                    skillLevelText.text = PlayerStats.Current.AttackSpeedLevel.ToString();
+                    buttonPriceText.text = (AttackSpeedInitialCost + (AttackSpeedButtonIncrement * PlayerStats.Current.AttackSpeedLevel - 1)).ToString();
+                    break;
+                case 3:
+                    skillLevelText.text = PlayerStats.Current.SpeedLevel.ToString();
+                    buttonPriceText.text = (SpeedInitialCost + (SpeedButtonIncrement * PlayerStats.Current.SpeedLevel - 1)).ToString();
+                    break;
+                case 4:
+                    skillLevelText.text = PlayerStats.Current.RodsLevel.ToString();
+                    buttonPriceText.text = (RodsInitialCost + (RodsButtonIncrement * PlayerStats.Current.RodsLevel - 1)).ToString();
+                    break;
+                case 5:
+                    skillLevelText.text = PlayerStats.Current.HealthLevel.ToString();
+                    buttonPriceText.text = (HealthInitialCost + (HealthButtonIncrement * PlayerStats.Current.HealthLevel - 1)).ToString();
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+        EXPCounter.text  = PlayerStats.Current.Exp.ToString();
     }
 }
