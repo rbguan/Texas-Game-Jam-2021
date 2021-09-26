@@ -60,6 +60,10 @@ public class PlayerLightning : MonoBehaviour
             if(canPlaceRod)
             {
                 PlaceRod();
+            } 
+            else
+            {
+                //ERROR NOISE
             }
         }
         else if(Input.GetKeyDown(KeyCode.Space))
@@ -142,6 +146,7 @@ public class PlayerLightning : MonoBehaviour
     {
         if(!canAttack || lightningRodsSummoned.Count < 1)
         {
+            //ERROR SOUND
             return;
         }
         AudioManager.Current.PlayLightningSFX();
