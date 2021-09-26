@@ -16,6 +16,7 @@ public class PlayerLightning : MonoBehaviour
     private bool canPlaceRod = true;
     private float lightningCooldownLeft;
     private bool canAttack = true;
+    [SerializeField] private LayerMask rodPlacementLayermask = 45;
 
     [Header("Rod Placement Variables")]
     [SerializeField] private GameObject RodPlaceParticlePrefab;
@@ -77,15 +78,18 @@ public class PlayerLightning : MonoBehaviour
         Vector3 rodSpawnPosition;
         if(Physics.Raycast(ray, out RaycastHit hit))
         {
-            MyCamera.DOShakePosition(rodShakeDuration, rodShakeStrength, rodShakeVibrato, rodShakeRandomness);
-            rodSpawnPosition = hit.point;
-            rodSpawnPosition.y += rodSpawnHeight;
-            GameObject newRod = GameObject.Instantiate(lightningRodPrefab, rodSpawnPosition, Quaternion.identity);
-            newRod.transform.DOMove(hit.point, rodSpawnTime);
-            lightningRodsSummoned.Add(newRod);
-            GameObject rodParticles = GameObject.Instantiate(RodPlaceParticlePrefab, hit.point, Quaternion.identity);
-            AudioManager.Current.PlayRodPlaceSFX();
-            StartCoroutine(DeleteAfterWait(rodParticles, 2f));
+            if(hit.collider.gameObject.layer == 8)
+            {
+                MyCamera.DOShakePosition(rodShakeDuration, rodShakeStrength, rodShakeVibrato, rodShakeRandomness);
+                rodSpawnPosition = hit.point;
+                rodSpawnPosition.y += rodSpawnHeight;
+                GameObject newRod = GameObject.Instantiate(lightningRodPrefab, rodSpawnPosition, Quaternion.identity);
+                newRod.transform.DOMove(hit.point, rodSpawnTime);
+                lightningRodsSummoned.Add(newRod);
+                GameObject rodParticles = GameObject.Instantiate(RodPlaceParticlePrefab, hit.point, Quaternion.identity);
+                AudioManager.Current.PlayRodPlaceSFX();
+                StartCoroutine(DeleteAfterWait(rodParticles, 2f));
+            }
         }
     }
 
@@ -109,7 +113,7 @@ public class PlayerLightning : MonoBehaviour
         AudioManager.Current.PlayLightningSFX();
         MyCamera.DOShakePosition(attackShakeDuration, attackShakeStrength, attackShakeVibrato, attackShakeRandomness);
         myAnimator.SetTrigger("goAttack");
-        Debug.Log("lightning animation");
+        // Debug.Log("lightning animation");
         canAttack = false;
         StartCoroutine(AttackCooldown());
         for(int rodNum = 0; rodNum < lightningRodsSummoned.Count; rodNum++)
