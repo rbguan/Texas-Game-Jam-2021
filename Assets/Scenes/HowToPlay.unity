@@ -472,6 +472,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2351802269113111221, guid: ec748c19bb3dbf7469e8d558eaf86040, type: 3}
+      propertyPath: click
+      value: 
+      objectReference: {fileID: 8300000, guid: c4e32427a18be9a4e81ade427b0f4012, type: 3}
+    - target: {fileID: 2351802269113111221, guid: ec748c19bb3dbf7469e8d558eaf86040, type: 3}
+      propertyPath: hover
+      value: 
+      objectReference: {fileID: 8300000, guid: c57453b447f64de49a0c798286e48d8f, type: 3}
     - target: {fileID: 4320727483791133118, guid: ec748c19bb3dbf7469e8d558eaf86040, type: 3}
       propertyPath: m_IsActive
       value: 0
