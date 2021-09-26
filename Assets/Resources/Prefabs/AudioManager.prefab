@@ -658,7 +658,7 @@ MonoBehaviour:
   _playerSFXAudioSource: {fileID: 8010661154735361789}
   _enemySFXAudioSource: {fileID: 2840538289134407189}
   titleMusicAudio: {fileID: 8300000, guid: 0f043308ed6fe244b911d325b34a7986, type: 3}
-  gameMusicAudio: {fileID: 8300000, guid: 797cca6c4dab6d94b949fa4055ef4ddd, type: 3}
+  gameMusicAudio: {fileID: 8300000, guid: 1b3a4006104ef534788454b247ace564, type: 3}
   lightningAudio: {fileID: 8300000, guid: fe544d082ddddb64caa882e83660f44b, type: 3}
   rodPlaceAudio: {fileID: 8300000, guid: 35824f591edc71d4aaba9a99a34930c6, type: 3}
   playerDamageAudio: {fileID: 8300000, guid: ed3d9b6f483a9a046839d148cdc3b5f4, type: 3}
