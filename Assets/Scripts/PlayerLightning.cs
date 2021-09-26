@@ -108,6 +108,8 @@ public class PlayerLightning : MonoBehaviour
 
     public void ResetRodsForNextRound()
     {
+        if (lightningRodsSummoned == null)
+            return;
         if(lightningRodsSummoned.Count > 0)
         {
             foreach(GameObject rod in lightningRodsSummoned)
