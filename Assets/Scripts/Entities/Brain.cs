@@ -1,12 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Brain : EntityPart
 {
     public State currentState;
     public State chaseState;
     public State attackingState;
+
+    [SerializeField] private AIDestinationSetter destinationSetter;
+
+    public AIDestinationSetter AIDestinationSetter
+    {
+        get
+        {
+            if (!destinationSetter)
+                destinationSetter = GetComponentInParent<AIDestinationSetter>();
+            return destinationSetter;
+        }
+    }
 
     protected override void Awake()
     {
