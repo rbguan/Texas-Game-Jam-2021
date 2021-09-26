@@ -14,7 +14,9 @@ namespace DefaultNamespace
         [SerializeField] private AudioSource _lightningSFXAudioSource;
         [SerializeField] private AudioSource _rodPlaceSFXAudioSource;
         [SerializeField] private AudioSource _playerSFXAudioSource;
+        [SerializeField] private AudioSource _footstepAudioSource;
         [SerializeField] private AudioSource _enemySFXAudioSource;
+        
 
         [Header("Audio Clips")]
 
@@ -23,6 +25,7 @@ namespace DefaultNamespace
         public AudioClip lightningAudio;
         public AudioClip rodPlaceAudio;
         public AudioClip playerDamageAudio;
+        public AudioClip footstepAudio;
         public AudioClip[] enemyDamageAudio;
         public AudioClip[] enemyDeathAudio;
         
@@ -135,6 +138,18 @@ namespace DefaultNamespace
                 _rodPlaceSFXAudioSource.loop = false;
             
                 _rodPlaceSFXAudioSource.Play();
+            }
+        }
+
+        public void PlayFootstepSFX()
+        {
+            if (_footstepAudioSource.clip != footstepAudio)
+            {
+                _footstepAudioSource.pitch = Random.Range(1f, 1.5f);
+                _footstepAudioSource.clip = footstepAudio;
+                _footstepAudioSource.loop = false;
+            
+                _footstepAudioSource.Play();
             }
         }
     }
