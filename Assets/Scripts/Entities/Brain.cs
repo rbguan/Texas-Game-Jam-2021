@@ -6,6 +6,7 @@ using Pathfinding;
 public class Brain : EntityPart
 {
     public State currentState;
+    public State idleState;
     public State chaseState;
     public State attackingState;
     public State stunnedState;
@@ -25,6 +26,7 @@ public class Brain : EntityPart
     protected override void Awake()
     {
         base.Awake();
+        idleState = new Idle(this);
         chaseState = new Chase(this);
         attackingState = new Attacking(this);
         stunnedState = new Stunned(this);
@@ -32,7 +34,7 @@ public class Brain : EntityPart
 
     private void Start()
     {
-        GoTo(chaseState);
+        GoTo(idleState);
     }
 
     private void Update()
