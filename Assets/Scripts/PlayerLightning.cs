@@ -84,6 +84,7 @@ public class PlayerLightning : MonoBehaviour
             newRod.transform.DOMove(hit.point, rodSpawnTime);
             lightningRodsSummoned.Add(newRod);
             GameObject rodParticles = GameObject.Instantiate(RodPlaceParticlePrefab, hit.point, Quaternion.identity);
+            AudioManager.Current.PlayRodPlaceSFX();
             StartCoroutine(DeleteAfterWait(rodParticles, 2f));
         }
     }
@@ -105,6 +106,7 @@ public class PlayerLightning : MonoBehaviour
         {
             return;
         }
+        AudioManager.Current.PlayLightningSFX();
         MyCamera.DOShakePosition(attackShakeDuration, attackShakeStrength, attackShakeVibrato, attackShakeRandomness);
         myAnimator.SetTrigger("goAttack");
         Debug.Log("lightning animation");

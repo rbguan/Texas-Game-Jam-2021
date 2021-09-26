@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DefaultNamespace
-{
-    public class AudioManager : MonoBehaviour
+// namespace DefaultNamespace
+// {
+    public class AudioManager : Singleton<AudioManager>
     {
         //How to play audio--> AudioManager.Instance.PlayMethod();
 
@@ -32,16 +32,9 @@ namespace DefaultNamespace
         private static AudioManager _instance;
         public static AudioManager Instance { get { return _instance; } }
 
-        void Awake()
+        protected override void Awake()
         {
-            if (_instance != null && _instance != this)
-            {
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                _instance = this;
-            }
+            base.Awake();
         }
         
         private void Start()
@@ -153,4 +146,4 @@ namespace DefaultNamespace
             }
         }
     }
-}
+// }
