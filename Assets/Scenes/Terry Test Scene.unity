@@ -60267,6 +60267,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 3102597903865006050}
+    - target: {fileID: 9138377891026776767, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
+      propertyPath: smoothTime
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 9138377891026776769, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
       propertyPath: m_Name
       value: Game Camera

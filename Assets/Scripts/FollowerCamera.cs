@@ -10,7 +10,7 @@ public class FollowerCamera : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 goalPos = target.position;
         goalPos.y = transform.position.y;

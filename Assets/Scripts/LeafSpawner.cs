@@ -24,7 +24,7 @@ public class LeafSpawner : MonoBehaviour
         {
             // Spawn new leaf
             var spawnLoc = GetRandomPointInsideCollider(gameObject.GetComponent<BoxCollider>());
-            var b = Instantiate(billowingObjects[Random.Range(0, billowingObjects.Length + 1)], spawnLoc, Quaternion.identity);
+            var b = Instantiate(billowingObjects[Random.Range(0, billowingObjects.Length)], spawnLoc, Quaternion.identity);
             b.transform.rotation = new Quaternion(Random.Range(1, 360), Random.Range(1, 360), 0, Random.Range(1, 360));
             b.transform.parent = gameObject.transform;
             timer = Random.Range(freqMin, freqMax);
