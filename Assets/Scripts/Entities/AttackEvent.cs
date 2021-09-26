@@ -13,7 +13,7 @@ public class AttackEvent
 
     public void Fire(GameObject parent)
     {
-        GameObject projectile = Object.Instantiate(projectilePrefab, parent.transform.position, Quaternion.identity, ParentManager.Temp);
+        GameObject projectile = Object.Instantiate(projectilePrefab, parent.transform.position + parent.transform.forward, Quaternion.identity, ParentManager.Temp);
         projectile.transform.LookAt(PlayerInfo.playerObject.transform);
     }
 }

@@ -182,5 +182,17 @@ PrefabInstance:
       propertyPath: waves
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4934164119727106830, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
+      propertyPath: spawnerCount
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934164119727106830, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
+      propertyPath: currentLevel.maxSections
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003893002185983379, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}
+      propertyPath: m_Volume
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef39f0ef70037a24bb4a5f4f664fc279, type: 3}

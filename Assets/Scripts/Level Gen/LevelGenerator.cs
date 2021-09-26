@@ -71,6 +71,8 @@ public class LevelGenerator : Singleton<LevelGenerator>
         Vector3 origin = section.transform.position + new Vector3(10, 0, 10);
         Vector3 offset = new Vector3(Random.Range(0, 9) * direction.x, 0, Random.Range(0, 9) * direction.y);
         Vector3 worldPosition = offset + origin;
+        if (Physics.CheckSphere(worldPosition, 2, LayerMask.GetMask("Bounds")))
+            return false;
         Instantiate(spawner, worldPosition, Quaternion.identity, ParentManager.Level);
         return true;
     }

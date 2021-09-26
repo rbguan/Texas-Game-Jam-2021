@@ -63,6 +63,8 @@ public class PlayerStats : Singleton<PlayerStats>
     [SerializeField] private int startHealth;
     [SerializeField] private int startSpeed;
 
+    
+
     private void Update()
     {
         //TODO: Remove this
@@ -123,6 +125,7 @@ public class PlayerStats : Singleton<PlayerStats>
         speed = startSpeed;
         lightningDamage = startLightningDamage;
         fullHealth = startHealth;
+        currentHealth = fullHealth;
         exp = 0;
     }
 
