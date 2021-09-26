@@ -484,6 +484,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4336664086238461731}
     m_Modifications:
+    - target: {fileID: 6187011426153911919, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 577
+      objectReference: {fileID: 0}
     - target: {fileID: 9138377891026776767, guid: 6d076b79d57c75b458a399ca60ac2f10, type: 3}
       propertyPath: target
       value: 
@@ -572,7 +576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7980897334447694023, guid: ed68945b9af74e447b97c407bce95de7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7980897334447694136, guid: ed68945b9af74e447b97c407bce95de7, type: 3}
       propertyPath: m_RootOrder
@@ -624,7 +628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7980897334447694137, guid: ed68945b9af74e447b97c407bce95de7, type: 3}
       propertyPath: PlayScene
-      value: Noah's Test Scene
+      value: Play Scene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed68945b9af74e447b97c407bce95de7, type: 3}
