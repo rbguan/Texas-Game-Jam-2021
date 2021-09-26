@@ -15,6 +15,9 @@ public class LevelGenerator : Singleton<LevelGenerator>
     [Header("Section Prefabs")]
     [SerializeField] private List<GameObject> sectionPrefabs = new List<GameObject>();
 
+    [Header("Spawner Prefabs")]
+    [SerializeField] private List<GameObject> spawnerPrefabs = new List<GameObject>();
+
     public static Level CurrentLevel => Current.currentLevel;
 
     public static List<GameObject> SectionPrefabs => Current.sectionPrefabs;
@@ -43,9 +46,44 @@ public class LevelGenerator : Singleton<LevelGenerator>
         }
         foreach (Section section in CurrentLevel.sections)
             SectionPlacementHandler.PlaceBarriersAroundSection(section);
+        GrabBag<Section> sectionBag = new GrabBag<Section>();
+        foreach(Section section in CurrentLevel.sections)
+            sectionBag.AddItem(section, 1);
+        for (int i = 0; i <= spawnerCount; i++)
+        {
+            if (!TryAddSpawnerToSection(sectionBag.Grab()))
+                i--;
+        }
         PlacePlayer();
         GenerateAStarGraph();
         Debug.Log("Level generated.");
+    }
+
+    private bool TryAddSpawnerToSection(Section section)
+    {
+        if (!CanAddSpawnerToSection(section, out Vector2Int position))
+            return false;
+        Vector2Int direction = position - section.position;
+        Vector3 origin = section.transform.position + new Vector3(10, 0, 10);
+        Vector3 offset = new Vector3(Random.Range(0, 9) * direction.x, 0, Random.Range(0, 9) * direction.y);
+        Vector3 worldPosition = offset + origin;
+
+        return true;
+    }
+
+    private bool CanAddSpawnerToSection(Section section, out Vector2Int position)
+    {
+        Vector2Int sectionPosition = section.position;
+        position = sectionPosition;
+        for (int xOffset = -1; xOffset <= 1; xOffset++)
+            for (int yOffset = -1; yOffset <= 1; yOffset++)
+            {
+                Vector2Int offset = new Vector2Int(xOffset, yOffset);
+                position = sectionPosition + offset;
+                if (!CurrentLevel.grid.IsWithinBounds(position) || CurrentLevel.barriers.Contains(position))
+                    return true;
+            }
+        return false;
     }
 
     private void PlacePlayer()
