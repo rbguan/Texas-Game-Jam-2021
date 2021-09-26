@@ -453,8 +453,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 8688362595483017769}
-  hover: {fileID: 8300000, guid: 7d25ca544d3516e4f956a6879caed31f, type: 3}
-  click: {fileID: 8300000, guid: 553a534018d30f445aa7fd7b9c98ef1b, type: 3}
+  hover: {fileID: 8300000, guid: c57453b447f64de49a0c798286e48d8f, type: 3}
+  click: {fileID: 8300000, guid: c4e32427a18be9a4e81ade427b0f4012, type: 3}
 --- !u!82 &8688362595483017769
 AudioSource:
   m_ObjectHideFlags: 0
