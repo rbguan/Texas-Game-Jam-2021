@@ -10,7 +10,7 @@ public class Portal : MonoBehaviour
         {
             //PlayerLevel.Current.level++;
             LevelLoadTransitions levelLoadTransitions = FindObjectOfType<LevelLoadTransitions>();
-            levelLoadTransitions.LoadPlayScene();
+            levelLoadTransitions.Credits();
         }
     }
 }
