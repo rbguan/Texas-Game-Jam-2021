@@ -17,6 +17,7 @@ public class PlayerLightning : MonoBehaviour
     private float lightningCooldownLeft;
     private bool canAttack = true;
     [SerializeField] private LayerMask rodPlacementLayermask = 45;
+    private Coroutine rodResetCoroutine = null;
 
     [Header("Rod Placement Variables")]
     [SerializeField] private GameObject RodPlaceParticlePrefab;
@@ -98,15 +99,45 @@ public class PlayerLightning : MonoBehaviour
 
     private void ResetRods()
     {
+        if(lightningRodsSummoned.Count > 0 && rodResetCoroutine == null)
+        {
+            AudioManager.Current.PlayRodRecallSFX();
+            rodResetCoroutine = StartCoroutine(ShootRodsUp());
+        }
+    }
+
+    public void ResetRodsForNextRound()
+    {
+        if (lightningRodsSummoned == null)
+            return;
+        if(lightningRodsSummoned.Count > 0)
+        {
+            foreach(GameObject rod in lightningRodsSummoned)
+            {
+                Destroy(rod);
+            }
+            lightningRodsSummoned.Clear();
+            canPlaceRod = true;
+        }
+    }
+    
+    private IEnumerator ShootRodsUp()
+    {
+        foreach(GameObject rod in lightningRodsSummoned)
+        {
+            Vector3 endPos = rod.transform.position;
+            endPos.y += 20f;
+            rod.transform.DOMove(endPos, .1f);
+        }
+        yield return new WaitForSeconds(.1f);
         foreach(GameObject rod in lightningRodsSummoned)
         {
             Destroy(rod);
         }
         lightningRodsSummoned.Clear();
         canPlaceRod = true;
-
+        rodResetCoroutine = null;
     }
-
     private void LightningAttack()
     {
         if(!canAttack || lightningRodsSummoned.Count < 1)

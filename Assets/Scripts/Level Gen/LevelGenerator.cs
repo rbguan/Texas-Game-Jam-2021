@@ -102,6 +102,8 @@ public class LevelGenerator : Singleton<LevelGenerator>
         PlayerInfo.playerObject.transform.position = spawnPosition;
         PlayerStats playerStats = PlayerInfo.playerObject.GetComponent<PlayerStats>();
         playerStats.CurrentHealth = playerStats.fullHealth;
+        PlayerLightning playerLightning = PlayerInfo.playerObject.GetComponent<PlayerLightning>();
+        playerLightning.ResetRodsForNextRound();
         FollowerCamera.SnapToPlayer();
         FollowerCamera.Current.target = PlayerInfo.playerObject.transform;
     }

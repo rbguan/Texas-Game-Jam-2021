@@ -15,9 +15,12 @@ public class FollowerCamera : Singleton<FollowerCamera>
 
     void FixedUpdate()
     {
-        Vector3 goalPos = target.position;
-        goalPos += new Vector3(xOffset, yOffset, zOffset);
-        transform.position = Vector3.SmoothDamp(transform.position, goalPos, ref velocity, smoothTime);
+        if (target)
+        {
+            Vector3 goalPos = target.position;
+            goalPos += new Vector3(xOffset, yOffset, zOffset);
+            transform.position = Vector3.SmoothDamp(transform.position, goalPos, ref velocity, smoothTime);
+        }
     }
 
     public static void SnapToPlayer()
