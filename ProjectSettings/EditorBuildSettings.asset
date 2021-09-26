@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Noah's Test Scene.unity
+    guid: 2d8312bd35f2f4341aa91d19fde0b68f
+  - enabled: 1
+    path: Assets/Scenes/UpgradesScene.unity
+    guid: dcf7c7404069da44680c3b199a17982c
   m_configObjects: {}

@@ -48,7 +48,12 @@ public class PlayerStats : Singleton<PlayerStats>
     public int CurrentHealth
     {
         get{return currentHealth;}
-        set{currentHealth = value;}
+        set
+        {
+            currentHealth = value;
+            if (currentHealth <= 0)
+                Die();
+        }
     }
     private int fullHealth;
     [SerializeField] private int startRods;
@@ -57,6 +62,14 @@ public class PlayerStats : Singleton<PlayerStats>
     [SerializeField] private float startWidth;
     [SerializeField] private int startHealth;
     [SerializeField] private int startSpeed;
+
+    private void Update()
+    {
+        //TODO: Remove this
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+            CurrentHealth = 0;
+    }
+
     public void DamageUp(int increment)
     {
         lightningDamage += increment;
@@ -97,6 +110,13 @@ public class PlayerStats : Singleton<PlayerStats>
         lightningDamage = startLightningDamage;
         fullHealth = startHealth;
         exp = 0;
+    }
+
+    private void Die()
+    {
+        LevelLoadTransitions levelLoadTransition = FindObjectOfType<LevelLoadTransitions>();
+        levelLoadTransition.Lose();
+        //gameObject.SetActive(false);
     }
 
 }

@@ -33,6 +33,7 @@ GameObject:
   - component: {fileID: 3102597903323715228}
   - component: {fileID: 2896894858631899003}
   - component: {fileID: 2975317775784638448}
+  - component: {fileID: 8198352949007107327}
   - component: {fileID: 1745960997}
   m_Layer: 0
   m_Name: Player
@@ -137,6 +138,18 @@ MonoBehaviour:
   myCamera: {fileID: 0}
   myAnimator: {fileID: 5082617498105989559}
   lightningLifeTime: 1
+--- !u!114 &8198352949007107327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3102597903323715231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ce1cd9969c97e4b927d523022c5bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &1745960997
 Rigidbody:
   m_ObjectHideFlags: 0
