@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b24730db7a5ee347883db8b55fafe2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: {x: 0, y: 0}
   hasNorthEntrance: 0
   hasSouthEntrance: 0
   hasWestEntrance: 0

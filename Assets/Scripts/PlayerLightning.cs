@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerLightning : MonoBehaviour
 {
@@ -15,7 +16,22 @@ public class PlayerLightning : MonoBehaviour
     private bool canPlaceRod = true;
     private float lightningCooldownLeft;
     private bool canAttack = true;
+    [SerializeField] private LayerMask rodPlacementLayermask = 45;
 
+    [Header("Rod Placement Variables")]
+    [SerializeField] private GameObject RodPlaceParticlePrefab;
+    [SerializeField] private float rodSpawnHeight = 20f;
+    [SerializeField] private float rodSpawnTime = .1f;
+    [SerializeField] private float rodShakeDuration = .5f;
+    [SerializeField] private float rodShakeStrength = .5f;
+    [SerializeField] private int rodShakeVibrato = 3;
+    [SerializeField] private float rodShakeRandomness = 45;
+
+    [Header("Attack Shake Variables")]
+    [SerializeField] private float attackShakeDuration = .75f;
+    [SerializeField] private float attackShakeStrength = 1f;
+    [SerializeField] private int attackShakeVibrato = 5;
+    [SerializeField] private float attackShakeRandomness = 45;
     public Camera MyCamera
     {
         get
@@ -62,10 +78,18 @@ public class PlayerLightning : MonoBehaviour
         Vector3 rodSpawnPosition;
         if(Physics.Raycast(ray, out RaycastHit hit))
         {
-            rodSpawnPosition = hit.point;
-            rodSpawnPosition.y += 1f;
-            GameObject newRod = GameObject.Instantiate(lightningRodPrefab, rodSpawnPosition, Quaternion.identity);
-            lightningRodsSummoned.Add(newRod);
+            if(hit.collider.gameObject.layer == 8)
+            {
+                MyCamera.DOShakePosition(rodShakeDuration, rodShakeStrength, rodShakeVibrato, rodShakeRandomness);
+                rodSpawnPosition = hit.point;
+                rodSpawnPosition.y += rodSpawnHeight;
+                GameObject newRod = GameObject.Instantiate(lightningRodPrefab, rodSpawnPosition, Quaternion.identity);
+                newRod.transform.DOMove(hit.point, rodSpawnTime);
+                lightningRodsSummoned.Add(newRod);
+                GameObject rodParticles = GameObject.Instantiate(RodPlaceParticlePrefab, hit.point, Quaternion.identity);
+                AudioManager.Current.PlayRodPlaceSFX();
+                StartCoroutine(DeleteAfterWait(rodParticles, 2f));
+            }
         }
     }
 
@@ -86,8 +110,10 @@ public class PlayerLightning : MonoBehaviour
         {
             return;
         }
-        myAnimator.SetBool("goAttack", true);
-        Debug.Log("lightning animation");
+        AudioManager.Current.PlayLightningSFX();
+        MyCamera.DOShakePosition(attackShakeDuration, attackShakeStrength, attackShakeVibrato, attackShakeRandomness);
+        myAnimator.SetTrigger("goAttack");
+        // Debug.Log("lightning animation");
         canAttack = false;
         StartCoroutine(AttackCooldown());
         for(int rodNum = 0; rodNum < lightningRodsSummoned.Count; rodNum++)
@@ -111,7 +137,7 @@ public class PlayerLightning : MonoBehaviour
     private void SpawnLightning(Vector3 rod1, Vector3 rod2)
     {
         Vector3 spawnPos = (rod1 + rod2)/2;
-        spawnPos.y = 1.5f;
+        spawnPos.y = 0;
         GameObject newLightning = Instantiate(lightningAttackPrefab, spawnPos, Quaternion.identity);
         float z = Vector3.Distance(rod1, rod2);
         Transform sfxModel = newLightning.GetComponentsInChildren<Transform>()[1];
@@ -130,7 +156,6 @@ public class PlayerLightning : MonoBehaviour
         {
             Destroy(lightning);
         }
-        myAnimator.SetBool("goAttack", false);
         lightningSummoned.Clear();
     }
 
@@ -143,5 +168,11 @@ public class PlayerLightning : MonoBehaviour
             yield return null;
         }
         canAttack = true;
+    }
+
+    private IEnumerator DeleteAfterWait(GameObject target, float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        Destroy(target);
     }
 }

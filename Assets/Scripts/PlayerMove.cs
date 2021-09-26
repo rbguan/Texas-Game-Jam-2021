@@ -24,6 +24,7 @@ public class PlayerMove : MonoBehaviour
         float rotation = 0;
         if(LeftRight != 0 || UpDown != 0)
         {
+            myAnimator.SetBool("isRunning", true);
             if (LeftRight > 0) { rotation = 90;}
             if (LeftRight < 0) { rotation = -90;}
             if (UpDown < 0) { rotation = 180;}
@@ -32,7 +33,14 @@ public class PlayerMove : MonoBehaviour
             if (LeftRight > 0  && UpDown > 0) { rotation = 45;}
             if (LeftRight < 0  && UpDown < 0) { rotation = -135;}
             if (LeftRight > 0  && UpDown < 0) { rotation = 135;}
+            // bugModelTransform.Rotate()\
+            // Vector3 rotationDifference = new Vector3(0, rotation, 0) - bugModelTransform.rotation.eulerAngles;
+            // bugModelTransform.DORotate(rotationDifference, .05f);
             bugModelTransform.rotation = Quaternion.Euler(0, rotation,0);
+        }
+        else
+        {
+            myAnimator.SetBool("isRunning", false);
         }
     }
 

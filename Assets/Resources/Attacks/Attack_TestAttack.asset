@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbc9c38e3c2a994c9e6dd3d08e58e04, type: 3}
   m_Name: Attack_TestAttack
   m_EditorClassIdentifier: 
-  range: 8
-  animation: {fileID: 0}
+  range: 3.5
   attackEvents:
-  - time: 0
-    projectilePrefab: {fileID: 0}
-    projectileCount: 0
+  - delay: 0.3
+    projectilePrefab: {fileID: 2482566070045079353, guid: 537a9b096153e1d47a05317885e22e45, type: 3}
+    speed: 0

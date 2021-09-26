@@ -41,6 +41,7 @@ public class Upgrades : MonoBehaviour
     [SerializeField] private int HealthMaxLevel;
     [SerializeField] private int HealthUpIncrement;
     private int currHealthCost;
+    [SerializeField] private Text EXPCounter;
     void Start()
     {
         currDamageCost = DamageButtonInitialCost;
@@ -54,8 +55,10 @@ public class Upgrades : MonoBehaviour
     {
         if(PlayerStats.Current.Exp >= currDamageCost)
         {
+            UpdateExpCounter(currDamageCost);
             PlayerStats.Current.Exp -= currDamageCost;
             currDamageCost += DamageButtonIncrement;
+            UpdateUpgradeGraphic(DamageButton, DamageButtonIncrement);
             PlayerStats.Current.DamageUp(DamageUpIncrement);
         }
     }
@@ -63,8 +66,10 @@ public class Upgrades : MonoBehaviour
     {
         if(PlayerStats.Current.Exp >= currWidthCost)
         {
+            UpdateExpCounter(currWidthCost);
             PlayerStats.Current.Exp -= currWidthCost;
             currWidthCost += WidthButtonIncrement;
+            UpdateUpgradeGraphic(WidthButton, WidthButtonIncrement);
             PlayerStats.Current.WidthUp(WidthUpIncrement);
         }
     }
@@ -72,8 +77,10 @@ public class Upgrades : MonoBehaviour
     {
         if(PlayerStats.Current.Exp >= currAttackSpeedCost)
         {
+            UpdateExpCounter(currAttackSpeedCost);
             PlayerStats.Current.Exp -= currAttackSpeedCost;
             currAttackSpeedCost += AttackSpeedButtonIncrement;
+            UpdateUpgradeGraphic(AttackSpeedButton, AttackSpeedButtonIncrement);
             PlayerStats.Current.AttackSpeedUp(AttackSpeedUpIncrement);
         }
     }
@@ -81,8 +88,10 @@ public class Upgrades : MonoBehaviour
     {
         if(PlayerStats.Current.Exp >= currSpeedCost)
         {
+            UpdateExpCounter(currSpeedCost);
             PlayerStats.Current.Exp -= currSpeedCost;
             currSpeedCost += SpeedButtonIncrement;
+            UpdateUpgradeGraphic(RodsButton, RodsButtonIncrement);
             PlayerStats.Current.SpeedUp(SpeedUpIncrement);
         }
     }
@@ -90,18 +99,34 @@ public class Upgrades : MonoBehaviour
     {
         if(PlayerStats.Current.Exp >= currRodsCost)
         {
+            UpdateExpCounter(currRodsCost);
             PlayerStats.Current.Exp -= currRodsCost;
             currRodsCost += RodsButtonIncrement;
+            UpdateUpgradeGraphic(RodsButton, RodsButtonIncrement);
             PlayerStats.Current.RodsUp(RodsUpIncrement);
         }
     }
     public void UpgradeHealth()
     {
-        if(PlayerStats.Current.Exp >= currRodsCost)
+        if(PlayerStats.Current.Exp >= currHealthCost)
         {
-            PlayerStats.Current.Exp -= currRodsCost;
-            currRodsCost += RodsButtonIncrement;
+            UpdateExpCounter(currHealthCost);
+            PlayerStats.Current.Exp -= currHealthCost;
+            currHealthCost += HealthButtonIncrement;
+            UpdateUpgradeGraphic(HealthButton, HealthButtonIncrement);
             PlayerStats.Current.HealthUp(HealthUpIncrement);
         }
+    }
+    private void UpdateUpgradeGraphic(Button button, int increment)
+    {
+        Text[] texts = button.GetComponentsInChildren<Text>();
+        Text skillLevelText = texts[0];
+        Text buttonPriceText = texts[1];
+        skillLevelText.text = (int.Parse(skillLevelText.text) + 1).ToString();
+        buttonPriceText.text = (int.Parse(buttonPriceText.text) + increment).ToString();
+    }
+    private void UpdateExpCounter(int cost)
+    {
+        EXPCounter.text  = (int.Parse(EXPCounter.text) - cost).ToString();
     }
 }

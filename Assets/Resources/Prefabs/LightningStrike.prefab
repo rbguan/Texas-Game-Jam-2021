@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953876769234357562}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2801067135832467155}
@@ -4974,7 +4974,8 @@ GameObject:
   - component: {fileID: 2801067135832467155}
   - component: {fileID: 523104600698680656}
   - component: {fileID: 1275863639636887488}
-  - component: {fileID: 6312728448106449510}
+  - component: {fileID: 8255541766852158234}
+  - component: {fileID: 1053961378695530934}
   - component: {fileID: 3627820530610687429}
   - component: {fileID: 6883447083546335246}
   m_Layer: 6
@@ -5048,7 +5049,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &6312728448106449510
+--- !u!136 &8255541766852158234
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5062,6 +5063,19 @@ CapsuleCollider:
   m_Height: 2.000001
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940701}
+--- !u!114 &1053961378695530934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7682285111774981857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e539a91440067a47912975bb3ae962f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!199 &3627820530610687429
 ParticleSystemRenderer:
   serializedVersion: 6

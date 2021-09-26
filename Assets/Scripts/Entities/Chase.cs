@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Chase : State
 {
@@ -9,11 +10,23 @@ public class Chase : State
 
     }
 
-    public override void FixedUpdate()
+    public override void Start()
     {
-        base.FixedUpdate();
-        Vector3 directionToPlayer = PlayerInfo.playerObject.transform.position - brain.parent.transform.position;
-        Vector2 directionToPlayerClamped = new Vector2(Mathf.Clamp(directionToPlayer.x, -1, 1), Mathf.Clamp(directionToPlayer.z, -1, 1)); 
-        brain.parent.Movement.Move(directionToPlayerClamped);
+        base.Start();
+        brain.AIDestinationSetter.target = PlayerInfo.playerObject.transform;
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        Combat combat = brain.parent.Combat;
+        if (combat && combat.IsInAttackRangeOfPlayer())
+            combat.AttackPlayerWithBestAttack();
+    }
+
+    public override void End()
+    {
+        base.End();
+        brain.AIDestinationSetter.target = null;
     }
 }

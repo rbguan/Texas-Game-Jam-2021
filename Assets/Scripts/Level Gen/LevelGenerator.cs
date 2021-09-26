@@ -49,17 +49,21 @@ public class LevelGenerator : Singleton<LevelGenerator>
         GrabBag<Section> sectionBag = new GrabBag<Section>();
         foreach(Section section in CurrentLevel.sections)
             sectionBag.AddItem(section, 1);
+        GrabBag<GameObject> spawnerBag = new GrabBag<GameObject>();
+        foreach(GameObject prefab in spawnerPrefabs)
+            spawnerBag.AddItem(prefab, 1);
         for (int i = 0; i <= spawnerCount; i++)
         {
-            if (!TryAddSpawnerToSection(sectionBag.Grab()))
+            if (!TryAddSpawnerToSection(sectionBag.Grab(), spawnerBag.Grab()))
                 i--;
         }
         PlacePlayer();
+        PlacePortal();
         GenerateAStarGraph();
         Debug.Log("Level generated.");
     }
 
-    private bool TryAddSpawnerToSection(Section section)
+    private bool TryAddSpawnerToSection(Section section, GameObject spawner)
     {
         if (!CanAddSpawnerToSection(section, out Vector2Int position))
             return false;
@@ -67,7 +71,9 @@ public class LevelGenerator : Singleton<LevelGenerator>
         Vector3 origin = section.transform.position + new Vector3(10, 0, 10);
         Vector3 offset = new Vector3(Random.Range(0, 9) * direction.x, 0, Random.Range(0, 9) * direction.y);
         Vector3 worldPosition = offset + origin;
-
+        if (Physics.CheckSphere(worldPosition, 2, LayerMask.GetMask("Bounds")))
+            return false;
+        Instantiate(spawner, worldPosition, Quaternion.identity, ParentManager.Level);
         return true;
     }
 
@@ -91,9 +97,19 @@ public class LevelGenerator : Singleton<LevelGenerator>
         Section spawnSection = CurrentLevel.sections[Random.Range(0, CurrentLevel.sections.Count)];
         Vector3 spawnPosition = new Vector3(spawnSection.position.x, 0, spawnSection.position.y) * 20 + new Vector3(-10, 0, 10);
         GameObject playerPrefab = Assets.Get<GameObject>("Player");
-        PlayerInfo.playerObject = Instantiate(playerPrefab, spawnPosition, Quaternion.identity, ParentManager.Entities);
+        if (!PlayerInfo.playerObject)
+            PlayerInfo.playerObject = Instantiate(playerPrefab);
+        PlayerInfo.playerObject.transform.position = spawnPosition;
         FollowerCamera.SnapToPlayer();
         FollowerCamera.Current.target = PlayerInfo.playerObject.transform;
+    }
+
+    private void PlacePortal()
+    {
+        GameObject portalPrefab = Assets.Get<GameObject>("Portal");
+        LevelInfo.portalObject = Instantiate(
+            portalPrefab, PlayerInfo.playerObject.transform.position, Quaternion.identity, ParentManager.Level);
+        LevelInfo.portalObject.SetActive(false); 
     }
 
     private void GenerateAStarGraph()

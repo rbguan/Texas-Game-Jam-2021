@@ -15,6 +15,13 @@ public class EntitySpawner : MonoBehaviour
     }
 
     public List<Spawn> spawns = new List<Spawn>();
+    private GrabBag<GameObject> spawnBag = new GrabBag<GameObject>();
+
+    private void Awake()
+    {
+        foreach(Spawn spawn in spawns)
+            spawnBag.AddItem(spawn.prefab, spawn.weight);
+    }
 
     private void OnEnable()
     {
@@ -28,6 +35,7 @@ public class EntitySpawner : MonoBehaviour
 
     public void SpawnEntity()
     {
-
+        GameObject prefab = spawnBag.Grab();
+        Instantiate(prefab, transform.position, Quaternion.identity, ParentManager.Entities);
     }
 }

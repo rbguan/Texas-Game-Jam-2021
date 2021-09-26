@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
+    public static List<Entity> entities = new List<Entity>();
 
     [Header("Parts")]
+    [SerializeField] private Animator animator;
     [SerializeField] private Brain brain;
+    [SerializeField] private Combat combat;
     [SerializeField] private Hitpoints hitpoints;
     [SerializeField] private Movement movement;
     [SerializeField] private Rigidbody body;
+
+    public Animator Animator
+    {
+        get
+        {
+            if (!animator)
+                animator = GetComponentInChildren<Animator>();
+            return animator;
+        }
+    }
 
     public Brain Brain
     {
@@ -18,6 +31,16 @@ public class Entity : MonoBehaviour
             if (!brain)
                 brain = GetComponentInChildren<Brain>();
             return brain;
+        }
+    }
+
+    public Combat Combat
+    {
+        get
+        {
+            if (!combat)
+                combat = GetComponentInChildren<Combat>();
+            return combat;
         }
     }
 
@@ -49,6 +72,16 @@ public class Entity : MonoBehaviour
                 body = GetComponentInChildren<Rigidbody>();
             return body;
         }
+    }
+
+    private void OnEnable()
+    {
+        entities.Add(this);
+    }
+
+    private void OnDisable()
+    {
+        entities.Remove(this);
     }
 
     public void Destroy()

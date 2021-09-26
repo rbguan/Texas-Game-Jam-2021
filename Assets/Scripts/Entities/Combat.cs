@@ -15,8 +15,25 @@ public class Combat : EntityPart
             attacks[i] = Instantiate(attacks[i]);
     }
 
+    public bool IsInAttackRangeOfPlayer()
+    {
+        float maxDistance = attacks[0].range;
+        float distanceToPlayer = Vector3.Distance(parent.transform.position, PlayerInfo.playerObject.transform.position);
+        return distanceToPlayer <= maxDistance;
+    }
+
     public void AttackPlayerWithBestAttack()
     {
+        StopAllCoroutines();
+        StartCoroutine(AttackRoutine());
+    }
 
+    private IEnumerator AttackRoutine()
+    {
+        parent.Brain.GoTo(parent.Brain.attackingState);
+        attacks[0].Start();
+        yield return attacks[0].Fire(parent.gameObject);
+        attacks[0].End();
+        parent.Brain.GoTo(parent.Brain.chaseState);
     }
 }
