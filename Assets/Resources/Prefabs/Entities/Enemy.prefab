@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 651511032464101989, guid: 666a85e599bd9f748af99a00eb546ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 88f83efa792295f409c18884df18d5c2, type: 2}
     - target: {fileID: 1537484986292721685, guid: 666a85e599bd9f748af99a00eb546ab3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8335511104711735207, guid: 666a85e599bd9f748af99a00eb546ab3, type: 3}
       propertyPath: m_Name
-      value: Entity Base
+      value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8834737028378849889, guid: 666a85e599bd9f748af99a00eb546ab3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -616876695129180744, guid: 8ac34d77e3521bd47972b330322aea15, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 666a85e599bd9f748af99a00eb546ab3, type: 3}
