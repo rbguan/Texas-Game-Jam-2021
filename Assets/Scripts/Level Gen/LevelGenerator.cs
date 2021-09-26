@@ -49,9 +49,12 @@ public class LevelGenerator : Singleton<LevelGenerator>
         GrabBag<Section> sectionBag = new GrabBag<Section>();
         foreach(Section section in CurrentLevel.sections)
             sectionBag.AddItem(section, 1);
+        GrabBag<GameObject> spawnerBag = new GrabBag<GameObject>();
+        foreach(GameObject prefab in spawnerPrefabs)
+            spawnerBag.AddItem(prefab, 1);
         for (int i = 0; i <= spawnerCount; i++)
         {
-            if (!TryAddSpawnerToSection(sectionBag.Grab()))
+            if (!TryAddSpawnerToSection(sectionBag.Grab(), spawnerBag.Grab()))
                 i--;
         }
         PlacePlayer();
@@ -59,7 +62,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
         Debug.Log("Level generated.");
     }
 
-    private bool TryAddSpawnerToSection(Section section)
+    private bool TryAddSpawnerToSection(Section section, GameObject spawner)
     {
         if (!CanAddSpawnerToSection(section, out Vector2Int position))
             return false;
@@ -67,7 +70,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
         Vector3 origin = section.transform.position + new Vector3(10, 0, 10);
         Vector3 offset = new Vector3(Random.Range(0, 9) * direction.x, 0, Random.Range(0, 9) * direction.y);
         Vector3 worldPosition = offset + origin;
-
+        Instantiate(spawner, worldPosition, Quaternion.identity, ParentManager.Level);
         return true;
     }
 

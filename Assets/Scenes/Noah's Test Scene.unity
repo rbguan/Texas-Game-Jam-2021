@@ -451,6 +451,13 @@ MonoBehaviour:
   currentLevel:
     maxSections: 32
     sections: []
-  spawnerCount: 0
+  spawnerCount: 12
   sectionPrefabs:
-  - {fileID: 4276677594749166313, guid: 8ee5ec6b2bced604381ae1e2bf906793, type: 3}
+  - {fileID: 8437314863324262595, guid: 51b4068b3197592468b980081eed98fa, type: 3}
+  - {fileID: 8437314863324262595, guid: 51b4068b3197592468b980081eed98fa, type: 3}
+  - {fileID: 8437314863324262595, guid: 51b4068b3197592468b980081eed98fa, type: 3}
+  - {fileID: 5539259860120061107, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
+  - {fileID: 5539259860120061107, guid: c23ff0eb537cf3d44b52f833696ec7b0, type: 3}
+  - {fileID: 626667827996254629, guid: 42d6000ff8ef748429b55b5ff5e50249, type: 3}
+  spawnerPrefabs:
+  - {fileID: 442639664929692035, guid: 7b4261adbca28b04aa0482fc54c232d0, type: 3}
