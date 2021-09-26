@@ -6,6 +6,7 @@ public class Footsteps : MonoBehaviour
 {
     public void PlayFootstep()
     {
-        AudioManager.Current.PlayFootstepSFX();
+        if (AudioManager.Current)
+            AudioManager.Current.PlayFootstepSFX();
     }
 }

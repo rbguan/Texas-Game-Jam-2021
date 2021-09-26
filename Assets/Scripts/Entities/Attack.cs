@@ -6,7 +6,6 @@ using UnityEngine;
 public class Attack : ScriptableObject
 {
     public float range;
-    public AnimationClip animation;
     public List<AttackEvent> attackEvents = new List<AttackEvent>();
 
     public void Start()
@@ -14,9 +13,13 @@ public class Attack : ScriptableObject
 
     }
 
-    public IEnumerator Fire()
+    public IEnumerator Fire(GameObject parent)
     {
-        yield break;
+        foreach(AttackEvent attackEvent in attackEvents)
+        {
+            yield return new WaitForSeconds(attackEvent.delay);
+            attackEvent.Fire(parent);
+        }
     }
 
     public void End()

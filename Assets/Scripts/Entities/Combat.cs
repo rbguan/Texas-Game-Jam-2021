@@ -32,7 +32,7 @@ public class Combat : EntityPart
     {
         parent.Brain.GoTo(parent.Brain.attackingState);
         attacks[0].Start();
-        yield return attacks[0].Fire();
+        yield return attacks[0].Fire(parent.gameObject);
         attacks[0].End();
         parent.Brain.GoTo(parent.Brain.chaseState);
     }
