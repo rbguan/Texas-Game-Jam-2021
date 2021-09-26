@@ -921,6 +921,7 @@ MonoBehaviour:
   rodPlaceAudio: {fileID: 8300000, guid: 67d6413bbb3a6e94a9a8ef878ed27753, type: 3}
   rodRecallAudio: {fileID: 8300000, guid: baf0cb799528a6144b4fed40bd335fc8, type: 3}
   playerDamageAudio: {fileID: 8300000, guid: ed3d9b6f483a9a046839d148cdc3b5f4, type: 3}
+  playerDeathAudio: {fileID: 8300000, guid: e7514720d488b0e42b794d1487956976, type: 3}
   uiUnavailableAudio: {fileID: 8300000, guid: ac49c2ad2456c7a4faf52f41ba19b5a8, type: 3}
   footstepAudio:
   - {fileID: 8300000, guid: feb7674d40a26264daf30b87d04a76e4, type: 3}
