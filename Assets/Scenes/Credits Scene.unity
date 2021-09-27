@@ -678,6 +678,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5942196884856401143, guid: 7546e62610c26ea41abcc87a0797ee67, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942196884856401143, guid: 7546e62610c26ea41abcc87a0797ee67, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942196884856401143, guid: 7546e62610c26ea41abcc87a0797ee67, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 5942196885044455678, guid: 7546e62610c26ea41abcc87a0797ee67, type: 3}
       propertyPath: m_Type
       value: 0
