@@ -187,6 +187,12 @@ public class Upgrades : Singleton<Upgrades>
     }
     public void InitializeUpgradeGraphics()
     {
+        Debug.Log("PlayerStats.Current.DamageLevel: " + PlayerStats.Current.DamageLevel);
+        Debug.Log("PlayerStats.Current.WidthLevel: " + PlayerStats.Current.WidthLevel);
+        Debug.Log("PlayerStats.Current.AttackSpeedLevel: " + PlayerStats.Current.AttackSpeedLevel);
+        Debug.Log("PlayerStats.Current.SpeedLevel: " + PlayerStats.Current.SpeedLevel);
+        Debug.Log("PlayerStats.Current.RodsLevel: " + PlayerStats.Current.RodsLevel);
+        Debug.Log("PlayerStats.Current.HealthLevel: " + PlayerStats.Current.HealthLevel);
         for(int i = 0; i < upgradeButtons.Count; i++)
         {
             Text[] texts = upgradeButtons[i].GetComponentsInChildren<Text>();
