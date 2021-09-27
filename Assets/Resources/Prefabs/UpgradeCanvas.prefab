@@ -300,7 +300,7 @@ MonoBehaviour:
   WidthButtonInitialCost: 1
   WidthButtonIncrement: 1
   WidthMaxLevel: 5
-  WidthUpIncrement: 2
+  WidthUpIncrement: 0.5
   AttackSpeedButton: {fileID: 6125709684672505789}
   AttackSpeedInitialCost: 2
   AttackSpeedButtonIncrement: 2
