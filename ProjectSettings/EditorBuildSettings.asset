@@ -8,12 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Noah's Test Scene.unity
     guid: 2d8312bd35f2f4341aa91d19fde0b68f
   - enabled: 1
-    path: Assets/Scenes/UpgradesScene.unity
-    guid: dcf7c7404069da44680c3b199a17982c
+    path: Assets/Scenes/Title Screen.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Play Scene.unity
     guid: f7c3ce8a4f13ecc4baaee5df65d0fe32
@@ -21,8 +21,8 @@ EditorBuildSettings:
     path: Assets/Scenes/HowToPlay.unity
     guid: ef78fd30a1d6c274c86fb4ba28a72ed9
   - enabled: 1
-    path: Assets/Scenes/Title Screen.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/UpgradesScene.unity
+    guid: dcf7c7404069da44680c3b199a17982c
   - enabled: 1
     path: Assets/Scenes/Credits Scene.unity
     guid: 3a578aa4da29f7742a2a189927dab2c3
