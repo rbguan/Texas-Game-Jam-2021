@@ -905,6 +905,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 4785282187038220512}
   particleObject: {fileID: 2056665373938398218, guid: 3963e86fedffd9647ae731e6b9bc8b25, type: 3}
+--- !u!114 &3385812217571140675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6434407791862394231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c31aeb5f6b2ec94f8d7c244d7f75735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 4785282187038220512}
+  particleObject: {fileID: 2056665373938398218, guid: 3963e86fedffd9647ae731e6b9bc8b25, type: 3}
 --- !u!1001 &8479674994988031246
 PrefabInstance:
   m_ObjectHideFlags: 0
