@@ -86,26 +86,32 @@ public class PlayerStats : Singleton<PlayerStats>
     public void DamageUp(int increment)
     {
         lightningDamage += increment;
+        damageLevel++;
     }
     public void WidthUp(float increment)
     {
         width += increment;
+        widthLevel++;
     }
     public void AttackSpeedUp(float increment)
     {
         attackCooldown -= increment;
+        attackSpeedLevel++;
     }
     public void SpeedUp(int increment)
     {
         speed += increment;
+        speedLevel++;
     }
     public void RodsUp(int increment)
     {
         maxRods += increment;
+        rodsLevel++;
     }
     public void HealthUp(int increment)
     {
         fullHealth += increment;
+        healthLevel++;
     }
     protected override void Awake()
     {
