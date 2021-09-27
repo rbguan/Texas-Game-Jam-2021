@@ -223,6 +223,8 @@ public class PlayerLightning : MonoBehaviour
     {
         canAttack = true;
         canPlaceRod = true;
+        if (lightningRodsSummoned == null)
+            return;
         if(lightningRodsSummoned.Count > 0)
         {
             foreach(GameObject obj in lightningRodsSummoned)

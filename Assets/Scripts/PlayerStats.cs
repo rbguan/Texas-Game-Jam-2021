@@ -51,8 +51,6 @@ public class PlayerStats : Singleton<PlayerStats>
         set
         {
             currentHealth = value;
-            if (currentHealth <= 0)
-                Die();
         }
     }
     public int fullHealth;
@@ -66,7 +64,7 @@ public class PlayerStats : Singleton<PlayerStats>
     {
         //TODO: Remove this
         if (Input.GetKeyDown(KeyCode.LeftControl))
-            CurrentHealth = 0;
+            TakeDamage(555);
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
             for (int i = Entity.entities.Count - 1; i >= 0; i--)
@@ -80,6 +78,8 @@ public class PlayerStats : Singleton<PlayerStats>
     public void TakeDamage(int amount)
     {
         CurrentHealth -= amount;
+        if (CurrentHealth <= 0)
+            Die();
         AudioManager.Current.PlayPlayerHitSFX();
     }
 
@@ -180,7 +180,7 @@ public class PlayerStats : Singleton<PlayerStats>
         AudioManager.Current.PlayPlayerDeathSFX();
         LevelLoadTransitions levelLoadTransition = FindObjectOfType<LevelLoadTransitions>();
         levelLoadTransition.Lose();
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
 }

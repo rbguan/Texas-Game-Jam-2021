@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TGJGame : Singleton<TGJGame>
 {
-    private const int INITIAL_WAIT_SECONDS = 5;
-    private const int WAIT_BETWEEN_WAVES_SECONDS = 1;
+    private const int INITIAL_WAIT_SECONDS = 2;
+    private const int WAIT_BETWEEN_WAVES_SECONDS = 3;
 
     [SerializeField] private int waves;
     [SerializeField] private GameObject findWayToExitText;

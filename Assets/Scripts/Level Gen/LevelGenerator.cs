@@ -94,18 +94,32 @@ public class LevelGenerator : Singleton<LevelGenerator>
 
     private void PlacePlayer()
     {
+        while (true)
+        {
+            if (TryPlacePlayer())
+                return;
+        }
+    }
+
+    private bool TryPlacePlayer()
+    {
         Section spawnSection = CurrentLevel.sections[Random.Range(0, CurrentLevel.sections.Count)];
-        Vector3 spawnPosition = new Vector3(spawnSection.position.x, 0, spawnSection.position.y) * 20 + new Vector3(-10, 1, 10);
+        Vector3 spawnPosition = new Vector3(spawnSection.position.x, 0, spawnSection.position.y) * 20 + new Vector3(Random.Range(-18, 2), 1, Random.Range(2,18));
+        if (Physics.OverlapSphere(spawnPosition, 2f, LayerMask.GetMask("Bounds")).Length > 0)
+            return false;
         GameObject playerPrefab = Assets.Get<GameObject>("Player");
         if (!PlayerInfo.playerObject)
             PlayerInfo.playerObject = Instantiate(playerPrefab);
+        PlayerInfo.playerObject.SetActive(true);
         PlayerInfo.playerObject.transform.position = spawnPosition;
         PlayerStats playerStats = PlayerInfo.playerObject.GetComponent<PlayerStats>();
         playerStats.CurrentHealth = playerStats.fullHealth;
         PlayerLightning playerLightning = PlayerInfo.playerObject.GetComponent<PlayerLightning>();
         playerLightning.ResetRodsForNextRound();
+        playerLightning.ResetPlayerFlags();
         FollowerCamera.SnapToPlayer();
         FollowerCamera.Current.target = PlayerInfo.playerObject.transform;
+        return true;
     }
 
     private void PlacePortal()
