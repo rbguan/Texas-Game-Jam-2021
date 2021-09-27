@@ -218,4 +218,24 @@ public class PlayerLightning : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         Destroy(target);
     }
+
+    public void ResetPlayerFlags()
+    {
+        canAttack = true;
+        canPlaceRod = true;
+        if(lightningRodsSummoned.Count > 0)
+        {
+            foreach(GameObject obj in lightningRodsSummoned)
+            {
+                Destroy(obj);
+            }
+        }
+        if(lightningSummoned.Count > 0)
+        {
+            foreach(GameObject obj in lightningSummoned)
+            {
+                Destroy(obj);
+            }
+        }
+    }
 }
